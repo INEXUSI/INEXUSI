@@ -1,0 +1,67 @@
+.gomoon-warp{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1800px;
+    /* gap: 5px; */
+}
+.namecard-home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 1.2em;
+    transition: scale .2s ease-in-out;
+    align-self: flex-start;
+}
+.namecard-img>img{
+    width: 13em;
+    border-radius: 90px;
+}
+.namecard-name{
+    text-align: center;
+    width: 100%; 
+}
+.namecard-name p,
+.namecard-name div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-shadow: var(--text-shadow2);
+}
+
+.namecard-name div:first-child{
+    width: 100%;
+    padding: 5px 25%;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.namecard-name div span{
+    font-family: "Noto Serif KR", serif;
+}
+.namecard-name p:not(:first-child){
+    display: block;
+}
+.namecard-name-eng p{
+    text-shadow: var(--text-shadow2);
+}
+.namecard-name-eng p:not(p:first-child){
+    font-size: .8em;
+}
+.namecard-name-eng p:first-child span{
+    font-family: serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.namecard-home:hover{
+    scale: 1.05;
+}
+/* .namecard-home:hover ~ .namecard-home:not(.namecard-home:hover){
+    filter: saturate(0%);
+} */

@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        main{
+            position: relative;
+            max-width: 180rem;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .sec__title{
+            font-family: "Montserrat";
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.21875;
+        }
+        .home-contents{
+            padding: 0 14vw;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            padding-left: 5px;
+            /* padding-bottom: 7px; */
+            transition: max-height 0.5s ease-in-out,
+            margin-bottom 0.5s ease-in-out;
+        }
+        .accordion-content::-webkit-scrollbar  {
+            display: none;
+        }
+        
+        .accordion-section.active .accordion-content {
+            max-height: calc(auto + 10px); /* 충분히 큰 값으로 설정 */
+            margin-bottom: 35px;
+        }
+
+        .accordion-trigger {
+            cursor: pointer;
+        }
+        .accordion-more{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 27px 0 10px 0;
+        }
+        .accordion-more a{
+            border: 1px solid #000;
+            border-radius: 30px;
+            padding: 10px;
+            background: #fff;
+            font-size: 0.8em;
+            transition: padding .2s ease-out;
+        }
+        .accordion-more a:hover{
+            background: #000;
+            color:#fff;
+            padding: 10px 30px;
+        }
+
+        .content-more{
+            font-size: 12px;
+            color: rgb(92, 43, 226);
+            margin-bottom: 30px;
+            transform: translateY(7px);
+        }
+        .content-more>a{
+            position: relative;
+
+        }
+        .content-more i{
+            margin-left: 10px;
+            transition: transform .5s ease-in-out;
+        }
+        .content-more:hover i{
+            transform: translateX(50%);
+        }
+        .content-more:hover .content-more-line{
+            width: calc(100% + 10px);
+        }
+        .content-more-line{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: rgb(92, 43, 226);
+            transform: scaleY(.8) translateY(6px);
+            transition: .3s;
+        }
+
+
+        .news-more-btn{
+            margin: 10px;
+            width: var(--q-size);
+            height: var(--q-size);
+            border-radius: 50%;
+            border: var(--bd-test);
+            font-size: 1.5em;
+            font-weight: bold;
+            background-color: #ffffff81;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+        }
+        .news-more-btn:hover{
+            background-color: #a2a2a281;
+            border-color: #ffffff27;
+            color: #fff;
+        }
+        #sec6 > .content-more{
+            margin: 0 0 10px 1px;
+            padding: 0 0 5px 5px;
+        }
+
+        .news-wrap{
+            overflow-x: scroll;
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            padding: 1em 0 .5em .5em;
+        }
+        .news-wrap::-webkit-scrollbar {
+            width: 20px;
+            height: .5em;
+        }
+        .news-wrap::-webkit-scrollbar-track {
+            background-color: none;
+        }
+        .news-wrap::-webkit-scrollbar-thumb { 
+            background-color: rgb(222, 222, 222);
+            border-radius: 10px;
+        }
+        .news-wrap::-webkit-scrollbar-thumb:hover { 
+            background-color: rgb(210, 210, 210);
+        }
+        .news-wrap::-webkit-scrollbar-button {
+            display: none;
+        }
+        .news-item{
+            flex-shrink: 0;
+            border: 1px solid #eeeeee47;
+            border-radius: 20px;            
+            width: 200px;
+            aspect-ratio: 10/11;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 0px 10px -3px #0000003e;
+        }
+        .news-item-top{
+            height: 60%;
+            width: 100%;
+            border-bottom: var(--bd-test);
+        }
+        .news-item-bottom{
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            
+        }
+        .news-item-text:nth-child(1){
+            font-size: .7em;
+        }
+        .news-item-text:nth-child(2){
+            font-size: 1.1em;
+        }
+        .news-item-text:nth-child(3){
+            font-size: .9em;
+        }
+        .news-item-text{
+            width: 100%;
+        }
+        .mission-content{
+            margin-top: 8px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            /* gap: 10%; */
+        }
+        .mission-box{
+            width: 30%;
+            min-width: 283px;
+            text-align: center;
+            padding-bottom: 40px;
+        }
+        .mission-key{
+            width: 100%;
+            text-align: left;
+        }
+        .mission-key span{
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 50px;
+            font-size: 0.8em;
+            color: #CFE7FA;
+            background: #000;
+        }
+        .mission-title{
+            padding: 0px 6px 0 6px;
+            font-family: "Montserrat";
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        .mission-description{
+            padding-top: 5px;   
+        }
+        .mission-img{
+            width: 100%;
+            text-align: center;
+            padding-bottom: 7px;
+            filter: brightness(0);
+        }
+        .mission-in{
+            /* border: 1px solid #00000011; */
+            border-radius: 20px;
+            margin-top: 8px;
+        }
+        @media (max-width:1440px) {
+            .mission-img img {width: 59%;}
+        }
+        @media (max-width:1340px) {
+            .mission-img img {width: 50%;}
+        }
+        @media (max-width:769px) {
+            .mission-img img {width: 45%;}
+        }
+    </style>
+        <link rel="stylesheet" href="./reset.css">
+        <link rel="stylesheet" href="./namecard.css">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./home-slider.css">
+    <style>
+        .program-content{
+            container-type: inline-size;
+        }
+        .program-content-item{
+            width: 100%;
+            padding: 15px;
+            padding-bottom: 10px;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;      
+        }
+        .program-content-text{
+            width: 100%;
+            flex-direction: column;
+            position: relative;
+            padding: 20px;
+        }
+        .program-content-text-bg-text{
+            --bg-text-size: 9em;
+            font-family: "Montserrat";
+            font-size: var(--bg-text-size);
+            font-weight: bold;
+            line-height: 90%;
+            color: aliceblue;
+            z-index: -1;
+            /* background: #CFE7FA; */
+            background: linear-gradient(to left, #CFE7FA 0%, #6393C1 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+        }
+        .program-content-r-text-bg-text{
+            right: 0;
+            transform: translateX(30px);
+        }
+        .program-content-l-text-bg-text{
+            left: 0;
+            transform: translateX(-15px);
+        }
+
+        .program-content-text div{
+            text-shadow: var(--text-shadow2);
+            width: 100%;
+            font-size: 1.2em;
+            transform: translateY(-10px);
+        }
+        .program-content-r-text p{
+            text-align: right;
+        }
+        .program-content-l-text p{
+            text-align: left;
+        }
+        .program-content-text-title{
+            font-weight: bold;
+            font-size: 2.5em;
+        }
+
+        .slider-container{
+            width: 100%;
+            max-width: 43%;
+            min-width: 35%;
+            aspect-ratio: 2/1.2;
+            border-radius: 40px;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0px 0px 15px -5px #00000070;
+        }
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            flex: 0 0 100%;
+            height: 400px;
+            background-size:cover;
+            background-position:center;
+        }
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.3);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .pagination {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .dot.active-dot {
+            background: white;
+        }
+
+
+        .pci-r{
+            flex-direction: row-reverse;
+        }
+
+
+        @container (max-width:1200px) {
+            .program-content-text-bg-text{
+                --bg-text-size: 8em;
+            }
+        }
+        @container (max-width:1000px) {
+            .program-content-text-bg-text{
+                --bg-text-size: 7em;
+            }
+            .program-content-text-title{
+                font-weight: bold;
+                font-size: 1.9em;
+            }
+        }
+        @container (max-width:860px) {
+            .program-content-text-bg-text{
+                --bg-text-size: 6em;
+            }
+        }
+        @container (max-width:810px) {
+            .program-content-text-bg-text{
+                --bg-text-size: 5em;
+            }
+            .program-content-text{
+                transform: translateY(-7px);
+                padding: 0;
+                padding-top: 3px;
+            }
+        }
+        @container (max-width:710px) {
+            .program-content-text-bg-text{
+                --bg-text-size: 8em;
+            }
+            .program-content-text div p{
+                transform: translateY(-2px);
+            }
+            .program-content-item{
+                flex-wrap: wrap;
+                flex-direction: column;
+                padding: 0;
+            }
+            .slider-container{
+                aspect-ratio: auto;
+                max-width: 100%;
+                height: 300px;
+            }
+            .mission-box{
+                max-width: 20px;
+            }
+        }
+        @container (max-width:480px) {
+            .program-content-text-bg-text{
+                --bg-text-size: 5em;
+            }
+            .program-content-r-text-bg-text{
+                transform: translateX(0px);
+            }
+            .program-content-item{
+            flex-wrap: wrap;
+            flex-direction: column;
+            }
+            .slider-container{
+                aspect-ratio: auto;
+                max-width: 100%;
+                height: 230px;
+            }
+        }
+    </style>
+    <link rel="icon" href="./img/logo/wl-yb(favicon).png">
+    <link rel="apple-touch-icon" href="./img/logo/wl-yb(favicon).png"/>
+    <title>인사이트넥서스연구원</title>
+    <!-- 탈리 문의하기 -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
+</head>
+<body>
+    <button id="topBtn" class="corner" onclick="topBtn()"><i class="fa-solid fa-chevron-up"></i></button>
+    <button button data-tally-open="3E17NL" data-tally-hide-title="1"data-tally-overlay="1" class="corner" id="q">?</button>
+    <input type="checkbox" name="allmenu" id="all_menu-toggle" class="dpnone">
+    <header>
+        <div class="headerbefore"></div>
+        <div class="header-wrap">
+            <div id="header-logo">
+                <a href="./">
+                    <img src="./img/logo/hl.png" alt="로고이미지" style="width: 55px;" id="logo-img">
+                </a>
+            </div>
+            <nav class="gnb">
+                <ul class="gnb_list">
+                    <li class="gnb_lv1-item">
+                        <a href="./about/greeting.html">소개</a>
+                        <ul class=" gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="./about/greeting.html">인사말</a></li>
+                            <li class="gnb_item-lv2"><a href="./about/history.html">미션 및 비전</a></li>
+                            <li class="gnb_item-lv2"><a href="./about/history.html">연혁</a></li>
+                            <li class="gnb_item-lv2"><a href="./about/location.html">오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="./company/committee1.html">구성원</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="./company/organization.html">조직도</a></li>
+                            <li class="gnb_item-lv2"><a href="./company/committee1.html">고문단</a></li>
+                            <li class="gnb_item-lv2"><a href="./company/committee2.html">운영자문단</a></li>
+                            <li class="gnb_item-lv2"><a href="./company/employees.html">임직원</a></li>
+                            <li class="gnb_item-lv2"><a href="./company/partnership.html">협력업체</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="/admission/process.html">입학</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="./admission/process.html">입학절차</a></li>
+                            <li class="gnb_item-lv2"><a href="./admission/add.html">등록하기</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="./program/about.html">프로그램</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="./program/about.html">소개</a></li>
+                            <li class="gnb_item-lv2"><a href="./program/curriculum.html">커리큘럼</a></li>
+                            <li class="gnb_item-lv2"><a href="./program/faculty.html">교수진</a></li>
+                            <li class="gnb_item-lv2"><a href="./program/resource.html">자료실</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="./community/notice.html">커뮤니티</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="./community/notice.html">공지사항</a></li>
+                            <li class="gnb_item-lv2"><a href="./community/news.html">소식</a></li>
+                            <li class="gnb_item-lv2"><a href="./community/gallery.html">미디어</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-menu">
+                <a href="./user/login.html" class="lang-wrap">
+                    <div class="lang-btn">
+                        <div class="lang-btn">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                    </div>
+                </a>
+                <label for="all_menu-toggle" class="all_menu-btn">
+                    <i class="fa-solid fa-bars all_menu-btn-icon"></i>
+                </label>
+            </div>
+        </div>
+    </header>
+<!-- 전체메뉴(숨긴메뉴) -->
+    <div class="all_menu-top">
+        <label for="all_menu-toggle" class="all_menu-top-x">
+            <i class="fa-solid fa-x"></i>
+        </label>
+    </div>
+    <div id="all_menu">
+        <div class="all-menu">
+            <div class="all-menu-row">
+                <a class="all-menu-row-sec1">연구원 소개</a>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="./about/greeting.html">인사말</a></li>
+                    <li class="all-menu-row-item"><a href="./about/mission.html">미션 및 비전</a></li>
+                    <li class="all-menu-row-item"><a href="./about/history.html">연혁</a></li>
+                    <li class="all-menu-row-item"><a href="./about/location.html">오시는 길</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">구성원</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="./company/organization.html">조직도</a></li>
+                    <li class="all-menu-row-item"><a href="./company/committee1.html">고문단</a></li>
+                    <li class="all-menu-row-item"><a href="./company/committee2.html">운영자문단</a></li>
+                    <li class="all-menu-row-item"><a href="./company/employees.html">임직원</a></li>
+                    <li class="all-menu-row-item"><a href="./company/partnership.html">협력업체</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">입학</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="./admission/process.html">입학절차</a></li>
+                    <li class="all-menu-row-item"><a href="./admission/add.html">등록하기</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">프로그램</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="./program/about.html">소개</a></li>
+                    <li class="all-menu-row-item"><a href="./program/curriculum.html">커리큘럼</a></li>
+                    <li class="all-menu-row-item"><a href="./program/faculty.html">교수진</a></li>
+                    <li class="all-menu-row-item"><a href="./program/resource.html">자료실</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">커뮤니티</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="./community/notice.html">공지사항</a></li>
+                    <li class="all-menu-row-item"><a href="./community/news.html">소식</a></li>
+                    <li class="all-menu-row-item"><a href="./community/gallery.html">미디어</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <label for="all_menu-toggle" class="all_menu-back"></label>
+<!-- 메인 -->
+    <main>
+        <section id="sec1">
+            <div class="main_slide">
+                <img src="./img/main/main1.jpg" class="initial">
+                <img src="./img/main/main2.jpg">
+                <img src="./img/main/main3.jpg">
+                <img src="./img/main/main4.jpg">
+                <img src="./img/main/main5.jpg">
+            </div>
+            <div class="main-center">
+                <img src="./img/logo/logo-ring2.png" alt="" class="main-center-ring">
+                <img src="./img/logo/test3.png" alt="" class="main-center-logo">
+            </div>
+            <div class="main_keytabs">
+                <a href="./about/greeting.html" class="keytabs">
+                    <span><i class="fa-solid fa-graduation-cap"></i></span>
+                    <p>연구원소개</p>
+                    <i class="fa-solid fa-arrow-up arrow45deg"></i>
+                </a>
+                <a href="./program/curriculum.html" class="keytabs">
+                    <span><i class="fa-regular fa-lightbulb"></i></span>
+                    <p>교육과정</p>
+                    <i class="fa-solid fa-arrow-up arrow45deg"></i>
+                </a>
+                <a href="./admission/process.html" class="keytabs">
+                    <span><i class="fa-solid fa-book"></i></span>
+                    <p>입학안내</p>
+                    <i class="fa-solid fa-arrow-up arrow45deg"></i>
+                </a>
+                <a href="./admission/add.html" class="keytabs">
+                    <span><i class="fa-solid fa-user-plus"></i></span>
+                    <p>등록하기</p>
+                    <i class="fa-solid fa-arrow-up arrow45deg"></i>
+                </a>
+            </div>
+        </section>
+        <div class="home-contents">
+            <section id="sec2" class="ap2 accordion-section">
+                <h3 class="sec__title accordion-trigger">MISSION&VISION</h3>
+                <div class="accordion-content">
+                    <div class="content-more">
+                        <a href="./about/mission.html">
+                            <span>MISSION&VISION 더 알아보기<i class="fa-solid fa-arrow-right"></i></span>
+                            <div class="content-more-line"></div>
+                        </a>
+                    </div>
+                    <div class="mission-content">
+                        <div class="mission1 mission-box">
+                            <div class="mission-key">
+                                <span>Education</span>
+                            </div>
+                            <div class="mission-in">
+                                <div class="mission-img">
+                                    <img src="./img/home-mission/education.png">
+                                </div>
+                                <div class="mission-title">국내 최고 수준의 프로그램</div>
+                                <div class="mission-description">
+                                    <p>하버드 경영대 & MIT Sloan 교수진이 함께합니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mission2 mission-box">
+                            <div class="mission-key">
+                                <span>Network</span>
+                            </div>
+                            <div class="mission-in">
+                                <div class="mission-img">
+                                    <img src="./img/home-mission/network.png">
+                                </div>
+                                <div class="mission-title">비즈니스 관계 형성망</div>
+                                <div class="mission-description">
+                                    <p>멤버들간의 통찰력을 공유할 수 있는 장을 만들어 비즈니스적인 시너지를 이끌어냅니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mission3 mission-box">
+                            <div class="mission-key">
+                                <span>Insight</span>
+                            </div>
+                            <div class="mission-in">
+                                <div class="mission-img">
+                                    <img src="./img/home-mission/light.png">
+                                </div>
+                                <div class="mission-title">수준 높은 인사이트</div>
+                                <div class="mission-description">최고 수준의 인사이트를 가진 회원만을 모집합니다.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-more">
+                        <a href="./about/mission.html">
+                            <span>더 알아보기</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section id="sec3" class="ap2 accordion-section">
+                <h3 class="sec__title accordion-trigger">PROGRAM</h3>
+                <div class="accordion-content">
+                    <div class="content-more">
+                        <a href="">
+                            <span>program 더 알아보기<i class="fa-solid fa-arrow-right"></i></span>
+                            <div class="content-more-line"></div>
+                        </a>
+                    </div>
+                    <div class="program-content">
+                        <div class="program-content-item ap">
+                            <div class="slider-container program-content-slider-1"> 
+                                <div class="slider-wrapper">
+                                    <div class="slide slide1" style="background-image: url('./img/home-slider-korea/KA4A5991.JPG.jpg');"></div>
+                                    <div class="slide slide1" style="background-image: url('./img/home-slider-korea/KA4A8044.JPG.jpg');"></div>
+                                    <div class="slide slide1" style="background-image: url('./img/home-slider-korea/KA4A5992.JPG.jpg');"></div>
+                                    <div class="slide slide1" style="background-image: url('./img/home-slider-korea/\(130\).JPG.jpg');"></div>
+                                </div>
+                                <button class="slider-button prev">&#10094;</button>
+                                <button class="slider-button next">&#10095;</button>
+                                <div class="pagination"></div>
+                            </div>
+                            <div class="program-content-text program-content-r-text">
+                                <p class="program-content-text-bg-text program-content-text-r-bg-text">KOREA</p>
+                                <div>
+                                    <p class="program-content-text-title">최고경영자과정</p>
+                                    <p>여의도 한경협 FKI 컨퍼런스 센터</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program-content-item ap pci-r">
+                            <div class="slider-container program-content-slider-2"> 
+                                <div class="slider-wrapper slider-wrapper2">
+                                    <div class="slide slide2" style="background-image: url('./img/home-slider-boston/karim1.jpg');"></div>
+                                    <div class="slide slide2" style="background-image: url('./img/home-slider-boston/karim2.jpg');"></div>
+                                    <div class="slide slide2" style="background-image: url('./img/home-slider-boston/rory1.jpg');"></div>
+                                    <div class="slide slide2" style="background-image: url('./img/home-slider-boston/rory2.jpg');"></div>
+                                    <div class="slide slide2" style="background-image: url('./img/home-slider-boston/rory3.jpg');"></div>
+                                    <div class="slide slide2" style="background-image: url('./img/home-slider-boston/all1.jpg');"></div>
+                                    <div class="slide slide2" style="background-image: url('./img/home-slider-boston/all2.jpg');"></div>
+                                    <div class="slide slide2" style="background-image: url('./img/home-slider-boston/all3.jpg');"></div>
+                                    <div class="slide slide2" style="background-image: url('./img/home-slider-boston/all4.jpg');"></div>
+                                </div>
+                                <button class="slider-button prev">&#10094;</button>
+                                <button class="slider-button next">&#10095;</button>
+                                <div class="pagination"></div>
+                            </div>
+                            <div class="program-content-text program-content-l-text">
+                                <p class="program-content-text-bg-text program-content-l-text-bg-text">BOSTON</p>
+                                <div>
+                                    <p class="program-content-text-title">보스턴 현지 연수</p>
+                                    <p>Harvard faculty Club</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program-content-item ap">
+                            <div class="slider-container program-content-slider-2"> 
+                                <div class="slider-wrapper slider-wrapper3">
+                                    <!-- <div class="slide slide3" style="background-image: url('./img/home-slider-special/카이스트부총장.jpg');"></div> -->
+                                    <div class="slide slide3" style="background-image: url('./img/home-slider-special/카이스트부총장2.jpg');"></div>
+                                    <div class="slide slide3" style="background-image: url('./img/home-slider-special/월드비전회장.jpg');"></div>
+                                    <div class="slide slide3" style="background-image: url('./img/home-slider-special/박경도콜러디.jpg');"></div>
+                                </div>
+                                <button class="slider-button prev">&#10094;</button>
+                                <button class="slider-button next">&#10095;</button>
+                                <div class="pagination"></div>
+                            </div>
+                            <div class="program-content-text program-content-r-text">
+                                <p class="program-content-text-bg-text program-content-r-text-bg-text">SPECIAL</p>
+                                <div>
+                                    <p class="program-content-text-title">특별초청강연</p>
+                                    <p>AI, 글로벌리더십, 핀테크 등 다양한 분야의 게스트 강연 초청</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-more">
+                            <a href="./program/about.html">
+                                <span>더 알아보기</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="sec4" class="ap2 accordion-section">
+                <h3 class="sec__title accordion-trigger">FACULTY</h3>
+                <div class="accordion-content">
+                    <div class="content-more">
+                        <a href="./program/faculty.html">
+                            <span>faculty 더 알아보기<i class="fa-solid fa-arrow-right"></i></span>
+                            <div class="content-more-line"></div>
+                        </a>
+                    </div>
+
+
+                    <a href="./program/faculty.html"  class="gomoon-warp">
+                        <div class="namecard-home">
+                            <div class="namecard-img"><img src="./img/faculty/Rory McDonald.png"></div>
+                            <div class="namecard-name">
+                                <div>
+                                    <span>Rory M. McDonald</span>
+                                </div>
+                                <p>Harvard Business School</p>
+                            </div>
+                        </div>
+                        <div class="namecard-home">
+                            <div class="namecard-img"><img src="./img/faculty/George Serafeim.jpg"></div>
+                            <div class="namecard-name">
+                                <div>
+                                    <span>George Serafeim</span>
+                                </div>
+                                <p>Harvard Business School</p>
+                            </div>
+                        </div>
+                        <div class="namecard-home">
+                            <div class="namecard-img"><img src="./img/faculty/George Westerman.jpg"></div>
+                            <div class="namecard-name">
+                                <div>
+                                    <span>George Westerman</span>
+                                </div>
+                                <p>MIT Sloan</p>
+                            </div>
+                        </div>
+                        <div class="namecard-home">
+                            <div class="namecard-img"><img src="./img/faculty/Renee Richardson Gosline.jpg"></div>
+                            <div class="namecard-name">
+                                <div>
+                                    <span>Renee Richardson Gosline</span>
+                                </div>
+                                <p>MIT Sloan</p>
+                            </div>
+                        </div>
+                        <div class="namecard-home">
+                            <div class="namecard-img"><img src="./img/faculty/Karim Lakhani.jpg"></div>
+                            <div class="namecard-name">
+                                <div>
+                                    <span>Karim Lakhani</span>
+                                </div>
+                                <p>Harvard Business School</p>
+                            </div>
+                        </div>
+                        <div class="namecard-home">
+                            <div class="namecard-img"><img src="./img/faculty/Rebecca Henderson.png"></div>
+                            <div class="namecard-name">
+                                <div>
+                                    <span>Rebecca M. Henderson</span>
+                                </div>
+                                <p>Harvard Business School</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <section id="sec5" class="ap2 accordion-section">
+                <h3 class="sec__title accordion-trigger">고문단</h3>
+                <div class="accordion-content">
+                    <div class="content-more">
+                        <a href="./company/committee1.html">
+                            <span>고문단 더 알아보기<i class="fa-solid fa-arrow-right"></i></span>
+                            <div class="content-more-line"></div>
+                        </a>
+                    </div>
+
+                    
+                    <a href="./company/committee1.html" class="gomoon-warp">
+                        <div class="namecard-home">
+                            <div class="namecard-img"><img src="./img/home-name/정운찬.png"></div>
+                            <div class="namecard-name">
+                                <div>
+                                    <span>정</span>
+                                    <span>운</span>
+                                    <span>찬</span>
+                                </div>
+                                <p>고문위원장</p>
+                                <p>40대 국무총리</p>
+                                <p>동반성장연구소 이사장</p>
+                            </div>
+                        </div>
+                        <div class="namecard-home">
+                            <div class="namecard-img"><img src="./img/home-name/정세균.png"></div>
+                            <div class="namecard-name">
+                                <div>
+                                    <span>정</span>
+                                    <span>세</span>
+                                    <span>균</span>
+                                </div>
+                                <p>고문위원</p>
+                                <p>46대 국무총리</p>
+                            </div>
+                        </div>
+                        <div class="namecard-home">
+                            <div class="namecard-img"><img src="./img/home-name/권영해.png"></div>
+                            <div class="namecard-name">
+                                <div>
+                                    <span>권</span>
+                                    <span>영</span>
+                                    <span>해</span>
+                                </div>
+                                <p>고문위원</p>
+                                <p>30대 국방부 장관</p>
+                            </div>
+                        </div>
+                        <div class="namecard-home">
+                            <div class="namecard-img"><img src="./img/home-name/황교안.png"></div>
+                            <div class="namecard-name">
+                                <div>
+                                    <span>황</span>
+                                    <span>교</span>
+                                    <span>안</span>
+                                </div>
+                                <p>고문위원</p>
+                                <p>44대 국무총리</p>
+                            </div>
+                        </div>
+                        <div class="namecard-home">
+                            <div class="namecard-img"><img src="./img/home-name/김창준.png"></div>
+                            <div class="namecard-name">
+                                <div>
+                                    <span>김</span>
+                                    <span>창</span>
+                                    <span>준</span>
+                                </div>
+                                <p>고문위원</p>
+                                <p>미국 공화당 연방 전하원의원</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <section id="sec6" class="ap2">
+                <h3 class="sec__title">NEWS</h3>
+                <div class="content-more">
+                    <a href="">
+                        <span>더보기<i class="fa-solid fa-arrow-right"></i></span>
+                        <div class="content-more-line"></div>
+                    </a>
+                </div>
+            </section>
+            <div class="news-wrap ap">
+                <a href="" class="news-item">
+                    <div class="news-item-top">
+                        <img src="" alt="섬네일">
+                    </div>
+                    <div class="news-item-bottom">
+                            <p class="news-item-text">0000-00-00</p>
+                            <p class="news-item-text">제목</p>
+                            <p class="news-item-text">내용 내용 내용</p>
+                    </div>
+                </a>
+                <a href="" class="news-item">
+                    <div class="news-item-top">
+                        <img src="" alt="섬네일">
+                    </div>
+                    <div class="news-item-bottom">
+                            <p class="news-item-text">0000-00-00</p>
+                            <p class="news-item-text">제목</p>
+                            <p class="news-item-text">내용 내용 내용</p>
+                    </div>
+                </a>
+                <a href="" class="news-item">
+                    <div class="news-item-top">
+                        <img src="" alt="섬네일">
+                    </div>
+                    <div class="news-item-bottom">
+                            <p class="news-item-text">0000-00-00</p>
+                            <p class="news-item-text">제목</p>
+                            <p class="news-item-text">내용 내용 내용</p>
+                    </div>
+                </a>
+                <a href="" class="news-item">
+                    <div class="news-item-top">
+                        <img src="" alt="섬네일">
+                    </div>
+                    <div class="news-item-bottom">
+                            <p class="news-item-text">0000-00-00</p>
+                            <p class="news-item-text">제목</p>
+                            <p class="news-item-text">내용 내용 내용</p>
+                    </div>
+                </a>
+                <a href="" class="news-item">
+                    <div class="news-item-top">
+                        <img src="" alt="섬네일">
+                    </div>
+                    <div class="news-item-bottom">
+                            <p class="news-item-text">0000-00-00</p>
+                            <p class="news-item-text">제목</p>
+                            <p class="news-item-text">내용 내용 내용</p>
+                    </div>
+                </a>
+                <a href="" class="news-item">
+                    <div class="news-item-top">
+                        <img src="" alt="섬네일">
+                    </div>
+                    <div class="news-item-bottom">
+                            <p class="news-item-text">0000-00-00</p>
+                            <p class="news-item-text">제목</p>
+                            <p class="news-item-text">내용 내용 내용</p>
+                    </div>
+                </a>
+
+                
+
+                <a href="" class="news-more-wrap">
+                    <button class="news-more-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                </a>
+            </div>
+        </div>
+    </main>
+        <!-- 푸터 -->
+    <footer id="footer">
+        <section class="footer-a">
+            <div class="footer-a-1">
+                <a href="./"><img src="./img/logo/long-test-w.png"></a>
+            </div>
+            <div class="footer-a-2">
+                <div>
+                    <h3>(주)인사이트넥서스인스티튜트</h3>
+                </div>
+                <div>
+                    <p>서울특별시 강남구 논현로 746 석호빌딩 301호</p>
+                    <p>대표 | 박성일</p>
+                    <p>사업자등록번호 | 614-87-02638</p>
+                    <p>대표전화 | +82-2-545-7781</p>
+                </div>
+            </div>
+            <a href="./about/location.html" class="footer-a-2-link">
+                오시는 길 
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </section>
+        <section class="footer-b">
+            <div class="footer-b-1">
+                <p>연구원 소개</p>
+                <ul>
+                    <li><a href="./about/greeting.html">인사말</a></li>
+                    <li><a href="./about/mission.html">미션 및 비전</a></li>
+                    <li><a href="./about//history.html">연혁</a></li>
+                    <li><a href="./about/location.html">오시는 길</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-b-2">
+                <p>구성원</p>
+                <ul>
+                    <li><a href="./company/organization.html">조직도</a></li>
+                    <li><a href="./company/committee1.html">고문단</a></li>
+                    <li><a href="./company/committee2.html">운영자문단</a></li>
+                    <li><a href="./company/employees.html">임직원</a></li>
+                    <li><a href="./company/partnership.html">협력업체</a></li>
+                </ul>
+            </div>
+            <div class="footer-b-3">
+                <p>입학</p>
+                <ul>
+                    <li><a href="./admission/process.html">입학절차</a></li>
+                    <li><a href="./admission/add.html">등록하기</a></li>
+                </ul>
+            </div>
+            <div class="footer-b-4">
+                <p>프로그램</p>
+                <ul>
+                    <li><a href="./program/about.html">소개</a></li>
+                    <li><a href="./program/curriculum.html">커리큘럼</a></li>
+                    <li><a href="./program/faculty.html">교수진</a></li>
+                    <li><a href="./program/resource.html">자료실</a></li>
+                </ul>
+            </div>
+            <div class="footer-b-5">
+                <p>커뮤니티</p>
+                <ul>
+                    <li><a href="./community/notice.html">공지사항</a></li>
+                    <li><a href="./community/news.html">소식</a></li>
+                    <li><a href="./community/gallery.html">미디어</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="footer-c">
+            <span>ⓒ2024 (주)인사이트넥서스연구원. ALL RIGHTS RESERVED.</span>
+        </section>
+    </footer>
+<!-- 자바스크립트 -->
+    <script>
+        function topBtn(){
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        //마우스 호버 시 다른 네임카드 흑백으로
+        document.querySelectorAll('section').forEach(section => {
+            const cards = section.querySelectorAll('.gomoon-warp .namecard-home');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseover', () => {
+                cards.forEach(otherCard => {
+                    if (otherCard !== card) {
+                    otherCard.style.filter = 'saturate(0%)';
+                    }
+                });
+                });
+
+                card.addEventListener('mouseout', () => {
+                cards.forEach(otherCard => {
+                    otherCard.style.filter = 'none';
+                });
+                });
+            });
+        });
+        //아코디언
+        document.addEventListener('DOMContentLoaded', function() {
+        const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+
+        function adjustScrollPosition(section) {
+            const headerHeight = document.querySelector('header').offsetHeight; // 헤더의 높이를 가져옴
+            const targetPosition = section.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+            window.scrollTo({
+                top: targetPosition,
+            });
+        }
+
+    accordionTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault(); // 기본 동작 방지
+            const section = this.closest('.accordion-section');
+            const content = section.querySelector('.accordion-content');
+            
+            // 현재 섹션의 상태를 토글
+            if (section.classList.contains('active')) {
+                section.classList.remove('active');
+                content.style.maxHeight = '0px';
+                content.style.overflow = 'hidden';
+            } else {
+                section.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.overflow = 'auto';
+            }
+
+            // 다른 모든 섹션을 닫음
+            accordionTriggers.forEach(otherTrigger => {
+                if (otherTrigger !== trigger) {
+                    const otherSection = otherTrigger.closest('.accordion-section');
+                    const otherContent = otherSection.querySelector('.accordion-content');
+                    otherSection.classList.remove('active');
+                    otherContent.style.maxHeight = '0px';
+                }
+            });
+
+            // 트리거로 스크롤 (열리는 높이 기준)
+            setTimeout(() => {
+                adjustScrollPosition(section);
+            }, 500); // 약간 더 긴 지연을 줘서 콘텐츠가 열린 후 스크롤되도록 함
+        });
+    });
+    // window.addEventListener('resize', resizeAccordionContent);
+});
+window.addEventListener('resize', function() {
+    const openSection = document.querySelector('.accordion-section.active');
+    if (openSection) {
+        const content = openSection.querySelector('.accordion-content');
+        content.style.maxHeight = content.scrollHeight + 'px';
+    }
+});
+// ----------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', function() {
+ const sliders = document.querySelectorAll('.slider-container');
+
+ sliders.forEach(slider => {
+     const sliderWrapper = slider.querySelector('.slider-wrapper');
+     const slides = slider.querySelectorAll('.slide');
+     const prevButton = slider.querySelector('.prev');
+     const nextButton = slider.querySelector('.next');
+     const pagination = slider.querySelector('.pagination');
+
+     let currentIndex = 0;
+     const totalSlides = slides.length;
+
+     // 페이지네이션 도트 생성
+     for (let i = 0; i < totalSlides; i++) {
+         const dot = document.createElement('div');
+         dot.classList.add('dot');
+         if (i === 0) dot.classList.add('active');
+         pagination.appendChild(dot);
+     }
+
+     const dots = slider.querySelectorAll('.dot');
+
+     function updateSlider() {
+         sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+         dots.forEach((dot, index) => {
+             dot.classList.toggle('active-dot', index === currentIndex);
+         });
+     }
+
+     function nextSlide() {
+         currentIndex = (currentIndex + 1) % totalSlides;
+         updateSlider();
+     }
+
+     function prevSlide() {
+         currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+         updateSlider();
+     }
+
+     nextButton.addEventListener('click', nextSlide);
+     prevButton.addEventListener('click', prevSlide);
+
+     dots.forEach((dot, index) => {
+         dot.addEventListener('click', () => {
+             currentIndex = index;
+             updateSlider();
+         });
+     });
+
+     // 자동 슬라이드 (옵션)
+     setInterval(nextSlide, 6000);
+ });
+});
+    </script>
+
+    <script src="./header.js"></script>
+    <script src="./homeSlider.js"></script>
+    <script src="./appear.js"></script>
+    <script src="./appear2.js"></script>
+    <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
+</body>
+</html>

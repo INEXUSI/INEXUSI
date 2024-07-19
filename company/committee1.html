@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../default.css">
+    <link rel="icon" href="../img/logo/wl-yb(favicon).png">
+    <link rel="apple-touch-icon" href="../img/logo/wl-yb(favicon).png"/>
+    <title>인사이트넥서스연구원</title>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <style>
+        .contents{
+            padding: 2rem 0 0 0
+        }
+        .centent1{
+            width: 100%;
+            max-width: 1300px;
+            padding: 25px 25px 0 25px ;
+        }
+        .cmts{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .cmt{
+            display: flex;
+            width: 100%;
+            max-width: 48%;
+            margin-bottom: 20px;
+            padding: 8px;
+            background-color: #e3e3e317;
+            border: 1px solid #cecece79;
+            border-radius: 25px;
+        }
+
+        .cmt-l{
+            width: 48%;
+        }
+        .cmt-l img{
+            width: 100%;
+            border-radius: 17px;
+        }
+        .cmt-r{
+            width: 100%;
+            padding: 10px 0 0 20px;
+        }
+        .cmt-r>div:first-child{
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+            font-size: 1.5em;
+        }
+        .cmt-r>div:last-child{
+            color: #9d9d9d;
+        }
+
+
+        .contents2{
+            width: 100%;
+            background-color: #aeaeae1b;
+            min-height: 500px;  
+            display: flex;
+            justify-content: center;          
+        }
+        .letter1,
+        .letter2{
+            width: 45%;
+            max-width: 1000px;
+            padding: 100px 25px;
+        }
+
+
+        @media (max-width:1023px) {
+            .contents2{
+                flex-direction: column;
+            }
+            .letter1,
+            .letter2{
+                width: 100%;
+            }
+            .letter1{
+                border-bottom: 1px solid #00000053;
+            }
+        }
+        @media (max-width:767px) {
+            .centent1{
+                padding: 25px 10px 0 10px;
+            }
+        }
+        @media (max-width:700px) {
+
+            .cmt-r > div:last-child p{
+                font-size: .9em;
+            }
+        }
+        @media (max-width:670px) {
+            .cmt-r > div:last-child p{
+                font-size: .9em;
+            }
+            .cmt{
+                max-width: 100%;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <button id="topBtn" class="corner" onclick="topBtnAction()"><i class="fa-solid fa-chevron-up"></i></button>
+    <button button data-tally-open="3E17NL" data-tally-hide-title="1"data-tally-overlay="1" class="corner" id="q">?</button>
+    <input type="checkbox" name="allmenu" id="all_menu-toggle" class="dpnone">
+    <header>
+        <div class="header-wrap">
+            <div id="header-logo">
+                <a href="../">
+                    <img src="../img/logo/hl-b.png" alt="로고이미지" style="width: 55px;" id="logo-img">
+                </a>
+
+            </div>
+            <div class="gnb">
+                <ul class="gnb_list">
+                    <li class="gnb_lv1-item">
+                        <a href="../about/greeting.html">소개</a>
+                        <ul class=" gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="../about/greeting.html">인사말</a></li>
+                            <li class="gnb_item-lv2"><a href="../about/mission.html">미션 및 비전</a></li>
+                            <li class="gnb_item-lv2"><a href="../about/history.html">연혁</a></li>
+                            <li class="gnb_item-lv2"><a href="../about/location.html">오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="../company/committee1.html">구성원</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="../company/organization.html">조직도</a></li>
+                            <li class="gnb_item-lv2"><a href="../company/committee1.html">고문단</a></li>
+                            <li class="gnb_item-lv2"><a href="../company/committee2.html">자문위원단</a></li>
+                            <li class="gnb_item-lv2"><a href="../company/employees.html">임직원</a></li>
+                            <li class="gnb_item-lv2"><a href="../company/partnership.html">협력업체</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="../admission/process.html">입학</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="../admission/process.html">입학절차</a></li>
+                            <li class="gnb_item-lv2"><a href="../admission/add.html">등록하기</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="../program/about.html">프로그램</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="../program/about.html">소개</a></li>
+                            <li class="gnb_item-lv2"><a href="../program/curriculum.html">커리큘럼</a></li>
+                            <li class="gnb_item-lv2"><a href="../program/faculty.html">교수진</a></li>
+                            <li class="gnb_item-lv2"><a href="../program/resource.html">자료실</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="../community/notice.html">커뮤니티</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="../community/notice.html">공지사항</a></li>
+                            <li class="gnb_item-lv2"><a href="../community/news.html">소식</a></li>
+                            <li class="gnb_item-lv2"><a href="../community/gallery.html">미디어</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-menu">
+                <a href="../user/login.html" class="lang-wrap">
+                    <div class="lang-btn">
+                        <div class="lang-btn">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                    </div>
+                </a>
+                <label for="all_menu-toggle" class="all_menu-btn">
+                    <i class="fa-solid fa-bars all_menu-btn-icon"></i>
+                </label>
+            </div>
+        </div>
+    </header>
+<!-- 전체메뉴(숨긴메뉴) -->
+    <div class="all_menu-top">
+        <label for="all_menu-toggle" class="all_menu-top-x">
+            <i class="fa-solid fa-x"></i>
+        </label>
+    </div>
+    <div id="all_menu">
+        <div class="all-menu">
+            <div class="all-menu-row">
+                <a class="all-menu-row-sec1">연구원 소개</a>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="../about/greeting.html">인사말</a></li>
+                    <li class="all-menu-row-item"><a href="../about/mission.html">미션 및 비전</a></li>
+                    <li class="all-menu-row-item"><a href="../about/history.html">연혁</a></li>
+                    <li class="all-menu-row-item"><a href="../about/location.html">오시는 길</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">구성원</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="../company/organization.html">조직도</a></li>
+                    <li class="all-menu-row-item"><a href="../company/committee1.html">고문단</a></li>
+                    <li class="all-menu-row-item"><a href="../company/committee2.html">운영자문단</a></li>
+                    <li class="all-menu-row-item"><a href="../company/employees.html">임직원</a></li>
+                    <li class="all-menu-row-item"><a href="../company/partnership.html">협력업체</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">입학</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="../admission/process.html">입학절차</a></li>
+                    <li class="all-menu-row-item"><a href="../admission/add.html">등록하기</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">프로그램</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="../program/about.html">소개</a></li>
+                    <li class="all-menu-row-item"><a href="../program/curriculum.html">커리큘럼</a></li>
+                    <li class="all-menu-row-item"><a href="../program/faculty.html">교수진</a></li>
+                    <li class="all-menu-row-item"><a href="../program/resource.html">자료실</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">커뮤니티</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="../community/notice.html">공지사항</a></li>
+                    <li class="all-menu-row-item"><a href="../community/news.html">소식</a></li>
+                    <li class="all-menu-row-item"><a href="../community/gallery.html">미디어</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <label for="all_menu-toggle" class="all_menu-back"></label>
+<!-- 메인 -->
+    <main>
+        <section class="local-head">
+            <span class="local-title">고문단</span>
+            <div class="local-head-img-wrap">
+                <img src="./t.jpg">
+            </div>
+        </section>
+        <nav id="sticky-nav">
+            <div class="navbar">
+                <a href="../company/organization.html"class="navbtn">조직도</a>
+                <a href="../company/committee1.html"class="navbtn navbtn-this">고문단</a>
+                <a href="../company/committee2.html"class="navbtn">운영자문단</a>
+                <a href="../company/employees.html"class="navbtn">임직원</a>
+                <a href="../company/partnership.html"class="navbtn">협력업체</a>
+            </div>
+        </nav>
+        <section class="contents">
+            <div class="content centent1 ap">
+                <ul class="cmts">
+                    <li class="cmt">
+                        <div class="cmt-l">
+                            <img src="./img-c1/정운찬.png">
+                        </div>
+                        <div class="cmt-r">
+                            <div>
+                                <span>정</span>
+                                <span>운</span>
+                                <span>찬</span>
+                            </div>
+                            <div>고문위원장</div>
+                            <div>
+                                <p>동반성장위원회 이사장 (2012.6 ~ )</p>
+                                <p>대한민국 40대 국무총리 (2009-2010)</p>
+                                <p>서울대 23대 총장 (2002-2006)</p>
+                                <p>프린스톤대 경제학 박사 (1972-1976)</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cmt">
+                        <div class="cmt-l">
+                            <img src="./img-c1/권영해.png">
+                        </div>
+                        <div class="cmt-r">
+                            <div>
+                                <span>권</span>
+                                <span>영</span>
+                                <span>해</span>
+                            </div>
+                            <div>고문위원</div>
+                            <div>
+                                <p>대한민국 통일건국회 회장 (2013.5 ~ )</p>
+                                <p>21대 국가안전기획부 부장 (1994-1998)</p>
+                                <p>30대 국방부 장관 (1993.2-1993.12)</p>
+                                <p>육군사관학교 15기 (1955-1959)</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cmt">
+                        <div class="cmt-l">
+                            <img src="./img-c1/황교안.png">
+                        </div>
+                        <div class="cmt-r">
+                            <div>
+                                <span>황</span>
+                                <span>교</span>
+                                <span>안</span>
+                            </div>
+                            <div>고문위원</div>
+                            <div>
+                                <p>법무법인 로고스 상임고문 변호사 (2022.6 ~ )</p>
+                                <p>대한민국 44대 국무총리 (2015.6-2017.5)</p>
+                                <p>63대 법무부 장관 (2013-2015)</p>
+                                <p>성균관대 법학 석사 (1955-1959)</p>
+                            </div>
+                        </li>
+                    <li class="cmt">
+                        <div class="cmt-l">
+                            <img src="./img-c1/정세균.png">
+                        </div>
+                        <div class="cmt-r">
+                            <div>
+                                <span>정</span>
+                                <span>세</span>
+                                <span>균</span>
+                            </div>
+                            <div>고문위원</div>
+                            <div>
+                                <p>사람사는세상 노무현재단 이사장 (2022.3 ~ )</p>
+                                <p>대한민국 46대 국무총리 (2020-2021)</p>
+                                <p>대한민국 20대 국회의장 (2016-2018)</p>
+                                <p>경희대 경영학 박사 (2000-2004)</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cmt">
+                        <div class="cmt-l">
+                            <img src="./img-c1/김창준.png">
+                        </div>
+                        <div class="cmt-r">
+                            <div>
+                                <span>김</span>
+                                <span>창</span>
+                                <span>준</span>
+                            </div>
+                            <div>고문위원</div>
+                            <div>
+                                <p>김창준 미래한미재단 이사장 (2011 ~ )</p>
+                                <p>미국 공화당 연방  하원의원 (1993.01.03~1999.01.03)</p>
+                                <p>미국 캘리포니아주 다이아몬드바시 시장 (1991~1992)</p>
+                                <p>USC, 토목공학 석사, 한양대 명예박사</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content contents2">
+                <div class="letter1">
+                    <p>
+                        1948년 대한민국 정부를 수립한 이 후 한국은 세계에서 가장 개발이 안 되고 빈곤한 국가였다. 현대국가로 새로 태어난 한국에서 ‘개발’이라는 개념 자체가 없었다고 해도 과언이 아니었다. <br>
+                        <br>
+                        지난 75년 동안 저개발국가에서 개발도상국의 단계를 경험하고 이제 한국은 유럽의 국가들과 같은 민주주의와 경제를 발전시키고 있다. 무엇이 한국을 이렇게 변화시켰는가? <br>
+                        <br>
+                        한국은 유교주의 문화를 토대로 갖고 있다. 유교는 교육을 근간으로 하고 있다. 이러한 유교문화 토대는 경제개발의 밑거름이 되었고 '보이지 않는 손'이 되었다. 한국의 많은 대기업과 중소기업은 여전히 연구와 개발에 많은 투자를 하고 있다. 이러한 연구개발의 토대는 교육이다. <br>
+                        <br>
+                        기업의 임원에게 변화하는 시대에 필요한 것은 기술개발 뿐만 아니라 학습을 통한 혁신이다. <br>
+                        <br>
+                        인사이트 넥서스 연구원이 기획한 최고경영자 프로그램은 이러한 혁신에 대한 통찰력과 영감을 많은 경영자에게 제공하게 될 것이다. 그 결과는 기업의 지속 가능한 발전과, 기업의 사회에 대한 공헌, 그리고 지구 환경의 보존과 보호에 공헌으로 나타날 것을 확신한다. <br>
+                    </p>
+                    <br>
+                    <p>고문단 위원회</p>
+                </div>
+                <div class="letter2">
+                    <p>
+                        After the establishment of the government of the Republic of Korea in 1948, Korea was the most underdeveloped and poorest country in the world. It was no exaggeration to say that the concept of ‘development’ itself did not exist in Korea, which was newly born as a modern country.<br>
+                        <br>
+                        After experiencing the transition from an underdeveloped country to a developing country over the past 75 years, what Korea has achieved is democracy and economy like those of European countries. What changed Korea like this?<br>
+                        <br>
+                        Korea has Confucian culture as its foundation. Neo-Confucianism is based on education. Confucian culture became the foundation and 'invisible hand' for economic development. Many large and small companies in Korea are still investing heavily in research and development. The foundation of this research and development is education.<br>
+                        <br>
+                        What corporate executives need in a changing era is not only technological development but also innovation through learning. <br>
+                        <br>
+                        The executive education programs planned by Insight Nexus Institute in collaboration with Business Schools will provide insight and inspiration for such innovation to executives. I am confident that the results will bring out the sustainable development to the companies, their contribution to society and the preservation and protection of the global environment.<br>
+                    </p>
+                    <br>
+                    <p>Advisory Committee</p>
+                </div>
+            </div>
+            <div class="bglogo">
+                <img src="../img/logo/wl-big.png">
+                <img src="../img/logo/wr-big.png">
+            </div>
+        </section>
+    </main>
+
+
+<!-- 푸터 -->
+    <footer id="footer">
+        <section class="footer-a">
+            <div class="footer-a-1">
+                <a href="../"><img src="../img/logo/long-test-w.png"></a>
+            </div>
+            <div class="footer-a-2">
+                <div>
+                    <h3>(주)인사이트넥서스인스티튜트</h3>
+                </div>
+                <div>
+                    <p>서울특별시 강남구 논현로 746 석호빌딩 301호</p>
+                    <p>대표 | 박성일</p>
+                    <p>사업자등록번호 | 614-87-02638</p>
+                    <p>대표전화 | +82-2-545-7781</p>
+                </div>
+            </div>
+            <a href="./about/location.html" class="footer-a-2-link">
+                오시는 길 
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </section>
+        <section class="footer-b">
+            <div class="footer-b-1">
+                <p>연구원 소개</p>
+                <ul>
+                    <li><a href="../about/greeting.html">인사말</a></li>
+                    <li><a href="../about/mission.html">미션 및 비전</a></li>
+                    <li><a href="../about//history.html">연혁</a></li>
+                    <li><a href="../about/location.html">오시는 길</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-b-2">
+                <p>구성원</p>
+                <ul>
+                    <li><a href="../company/organization.html">조직도</a></li>
+                    <li><a href="../company/committee1.html">고문단</a></li>
+                    <li><a href="../company/committee2.html">자문위원단</a></li>
+                    <li><a href="../company/employees.html">임직원</a></li>
+                    <li><a href="../company/partnership.html">협력업체</a></li>
+                </ul>
+            </div>
+            <div class="footer-b-3">
+                <p>입학</p>
+                <ul>
+                    <li><a href="../admission/process.html">입학절차</a></li>
+                    <li><a href="../admission/add.html">등록하기</a></li>
+                </ul>
+            </div>
+            <div class="footer-b-4">
+                <p>프로그램</p>
+                <ul>
+                    <li><a href="../program/about.html">소개</a></li>
+                    <li><a href="../program/curriculum.html">커리큘럼</a></li>
+                    <li><a href="../program/faculty.html">교수진</a></li>
+                    <li><a href="../program/resource.html">자료실</a></li>
+                </ul>
+            </div>
+            <div class="footer-b-5">
+                <p>커뮤니티</p>
+                <ul>
+                    <li><a href="../community/notice.html">공지사항</a></li>
+                    <li><a href="../community/news.html">소식</a></li>
+                    <li><a href="../community/gallery.html">미디어</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="footer-c">
+            <span>ⓒ2024 (주)인사이트넥서스연구원. ALL RIGHTS RESERVED.</span>
+        </section>
+    </footer>
+
+
+<!-- 자바스크립트 -->
+    <script>
+    window.addEventListener('scroll', () => {
+        const topBtn = document.querySelector('#topBtn');
+        if (window.scrollY > 200) {
+            topBtn.style.display = "block";
+        } 
+        else {
+            topBtn.style.display = "none";
+        }
+
+    })
+    function topBtnAction(){
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+    
+    <script src="../stickynav.js"></script>
+    <script src="../appear.js"></script>
+    <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
+</body>
+</html>

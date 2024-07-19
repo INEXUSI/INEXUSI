@@ -1,0 +1,44 @@
+html,body,h1,h2,h3,h4,h5,h6,div,p,blockquote,pre,code,
+address,ul,ol,li,menu,nav,section,article,aside,
+dl,dt,dd,table,thead,tbody,tfoot,label,caption,th,td,
+form,fieldset,legend,hr,input,button,textarea,
+object,figure,figcaption { padding: 0; margin: 0; }
+a, button{
+    border: 0;
+    outline: none;
+    color: inherit;
+}
+ul, ol, li {list-style: none;}
+html{
+    width: 100vw;
+    height: 100vh;
+    &::-webkit-scrollbar{
+        display: none;
+      }
+}
+.preload {
+
+    transition: none !important;
+
+    -webkit-transition: none !important;
+
+    -moz-transition: none !important;
+
+    -ms-transition: none !important;
+
+    -o-transition: none !important;
+
+  }
+/* ----------------------------------------------- */
+a:hover{
+    cursor: pointer;
+}
+.dpnone{
+    display: none;
+}
+.arrow45deg{
+    transform: rotateZ(45deg)translateY(-50%);
+}
+button:hover{
+    cursor: pointer;
+}

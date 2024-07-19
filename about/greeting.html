@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../default.css">
+    <link rel="icon" href="../img/logo/wl-yb(favicon).png">
+    <link rel="apple-touch-icon" href="../img/logo/wl-yb(favicon).png"/>
+    <title>인사이트넥서스연구원</title>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <style>
+        .contents1{
+            display: flex;
+            align-items:flex-start;
+            flex-wrap: nowrap;
+            gap: 4em;
+            justify-content: center;
+        }
+        .ceo-yoon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 1.2em;
+        }
+        .yoon-img>img{
+            width: 14em;
+            border-radius: 35px;
+        }
+        .yoon-name{
+            text-align: center;
+        }
+        .yoon-name p{
+            width: 100%; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-shadow: var(--text-shadow2);
+        }
+        .yoon-name p:first-child{
+            padding: 0 1.5em;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .yoon-name p span{
+            font-family: "Noto Serif KR", serif;
+        }
+        .yoon-name p:not(:first-child){
+            display: block;
+        }
+        .yoon-name-eng p{
+            text-shadow: var(--text-shadow2);
+        }
+        .yoon-name-eng p:not(p:first-child){
+            font-size: .8em;
+        }
+        .yoon-name-eng p:first-child span{
+            font-family: serif;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        
+        .greeting-c{
+            width: 100%;
+            max-width: 700px;
+            font-size: 1.05em;
+            text-shadow: var(--text-shadow3);
+
+        }
+        .fa-quote-right{
+            float: right;
+        }
+        
+        .contents2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 5em;
+        }
+        .contents2 .greeting-c{
+            max-width: calc(700px + 17em);
+        }
+        @media (max-width: 1111px){
+            .yoon-img>img{
+                width: 13em;
+            }
+            .contents1{
+                gap: 2em;
+            }
+        }
+        @media (max-width: 999px){
+            .yoon-img>img{
+                width: 12em;
+            }
+            .greeting-c{
+                /* width: 100%;
+                max-width: 700px; */
+                font-size: 1em;
+            }
+        }
+        @media (max-width: 721px){
+            .contents1{
+                flex-wrap: wrap-reverse;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="topBtn" class="corner" onclick="topBtnAction()"><i class="fa-solid fa-chevron-up"></i></button>
+    <button button data-tally-open="3E17NL" data-tally-hide-title="1"data-tally-overlay="1" class="corner" id="q">?</button>
+    <input type="checkbox" name="allmenu" id="all_menu-toggle" class="dpnone">
+    <header>
+        <div class="header-wrap">
+            <div id="header-logo">
+                <a href="../">
+                    <img src="../img/logo/hl-b.png" alt="로고이미지" style="width: 55px;" id="logo-img">
+                </a>
+
+            </div>
+            <div class="gnb">
+                <ul class="gnb_list">
+                    <li class="gnb_lv1-item">
+                        <a href="../about/greeting.html">소개</a>
+                        <ul class=" gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="../about/greeting.html">인사말</a></li>
+                            <li class="gnb_item-lv2"><a href="../about/mission.html">미션 및 비전</a></li>
+                            <li class="gnb_item-lv2"><a href="../about/history.html">연혁</a></li>
+                            <li class="gnb_item-lv2"><a href="../about/location.html">오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="../company/committee1.html">구성원</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="../company/organization.html">조직도</a></li>
+                            <li class="gnb_item-lv2"><a href="../company/committee1.html">고문단</a></li>
+                            <li class="gnb_item-lv2"><a href="../company/committee2.html">운영자문단</a></li>
+                            <li class="gnb_item-lv2"><a href="../company/employees.html">임직원</a></li>
+                            <li class="gnb_item-lv2"><a href="../company/partnership.html">협력업체</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="../admission/process.html">입학</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="../admission/process.html">입학절차</a></li>
+                            <li class="gnb_item-lv2"><a href="/admission/add.html">등록하기</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="../program/about.html">프로그램</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="../program/about.html">소개</a></li>
+                            <li class="gnb_item-lv2"><a href="../program/curriculum.html">커리큘럼</a></li>
+                            <li class="gnb_item-lv2"><a href="../program/faculty.html">교수진</a></li>
+                            <li class="gnb_item-lv2"><a href="../program/resource.html">자료실</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="../community/notice.html">커뮤니티</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="../community/notice.html">공지사항</a></li>
+                            <li class="gnb_item-lv2"><a href="../community/news.html">소식</a></li>
+                            <li class="gnb_item-lv2"><a href="../community/gallery.html">미디어</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-menu">
+                <a href="../user/login.html" class="lang-wrap">
+                    <div class="lang-btn">
+                        <div class="lang-btn">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                    </div>
+                </a>
+                <label for="all_menu-toggle" class="all_menu-btn">
+                    <i class="fa-solid fa-bars all_menu-btn-icon"></i>
+                </label>
+            </div>
+        </div>
+    </header>
+<!-- 전체메뉴(숨긴메뉴) -->
+    <div class="all_menu-top">
+        <label for="all_menu-toggle" class="all_menu-top-x">
+            <i class="fa-solid fa-x"></i>
+        </label>
+    </div>
+    <div id="all_menu">
+        <div class="all-menu">
+            <div class="all-menu-row">
+                <a class="all-menu-row-sec1">연구원 소개</a>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="../about/greeting.html">인사말</a></li>
+                    <li class="all-menu-row-item"><a href="../about/mission.html">미션 및 비전</a></li>
+                    <li class="all-menu-row-item"><a href="../about/history.html">연혁</a></li>
+                    <li class="all-menu-row-item"><a href="../about/location.html">오시는 길</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">구성원</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="../company/organization.html">조직도</a></li>
+                    <li class="all-menu-row-item"><a href="../company/committee1.html">고문단</a></li>
+                    <li class="all-menu-row-item"><a href="../company/committee2.html">운영자문단</a></li>
+                    <li class="all-menu-row-item"><a href="../company/employees.html">임직원</a></li>
+                    <li class="all-menu-row-item"><a href="../company/partnership.html">협력업체</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">입학</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="../admission/process.html">입학절차</a></li>
+                    <li class="all-menu-row-item"><a href="../admission/add.html">등록하기</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">프로그램</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="../program/about.html">소개</a></li>
+                    <li class="all-menu-row-item"><a href="../program/curriculum.html">커리큘럼</a></li>
+                    <li class="all-menu-row-item"><a href="../program/faculty.html">교수진</a></li>
+                    <li class="all-menu-row-item"><a href="../program/resource.html">자료실</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">커뮤니티</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="../community/notice.html">공지사항</a></li>
+                    <li class="all-menu-row-item"><a href="../community/news.html">소식</a></li>
+                    <li class="all-menu-row-item"><a href="../community/gallery.html">미디어</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <label for="all_menu-toggle" class="all_menu-back"></label>
+<!-- 메인 -->
+    <main>
+        <section class="local-head">
+            <span class="local-title">인사말</span>
+            <div class="local-head-img-wrap">
+                <img src="./greeting head.jpg">
+            </div>
+        </section>
+        <nav id="sticky-nav">
+            <div class="navbar">
+                <a href="../about/greeting.html"class="navbtn navbtn-this">인사말</a>
+                <a href="../about/mission.html"class="navbtn">미션 및 비전</a>
+                <a href="../about/history.html"class="navbtn">연혁</a>
+                <a href="../about/location.html"class="navbtn">오시는길</a>
+            </div>
+        </nav>
+        <section class="contents">
+            <div class="contents1">
+                <div class="greeting-c ap">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p class="ap">디지털 변혁의 시대에, 변혁에 대한 시급한 필요성은 생존과 지속 가능한 진화에 필수 불가결한 것입니다. 인사이트 넥서스 연구원이 우리를 지평선으로 안내하고 그것을 넘어서 우리 기업가들은 미래에 대한 비전을 목격하게 될 것이라 분명히 믿고 있습니다. INI의 설립 목적에서 나타난 것과 같이 참여 기업가는 통찰력을 공유하고 강력한 네트워킹 그룹을 형성하게 될 것입니다. 이것은 기업과 글로벌 공동체 그리고 자연을 함께 건강하게 만들 것입니다. </p>
+                    <br>
+                    <p class="ap">CBS 활동 한 후에 지난 30년동안 다양한 분야에서 기업들을 설립하고 운영을 하고 있습니다. 이솔 그룹을 이끌면서, 이솔그룹의 임원과 고객사의 임원들은 미래를 위한 실질적으로 도움을 주고 통찰력을 줄 수 있는 최고경영자 프로그램을 요구하고 있습니다. 따라서 본 연구소는 세계 명문대의 다양한 경영대와 협력하여 프로그램을 통해 미래에 대한 새로운 빛을 비춰 줄 것입니다. 더 좋은 세상과 더 좋은 지구를 위해  함께 해 주시기를 바랍니다.  </p>
+                    <br>
+                    <p class="ap">여성의 권리 개선, 낮은 출산율 문제, 환경 개선 문제 등을 해결하기 위해 활동을 하고 있고 필요한 곳에서는 기부금을 내서 적극적으로 변화를 추구하고 있습니다. </p>
+                    <br>
+                    <p class="ap">지난 10년 동안 ESG는 사회 모든 분야에서 강조되어 왔고 현재는 매우 강하게 요구되고 있습니다. 기후 위기를 직면한 세계 공동체에 이것은 이제 피할 수 없는 명령입니다. 다양한 분야에서 기부, ESG 운동 참여, 관련 협회 설립을 협조, 세계 최초의 ESG 관련 법안을 준비를 한국 국회에서 인준을 받도록 노력하고 있습니다. 이것은 더 좋은 공동체와 지구 환경을 위해 공헌할 것입니다. 이러한 법안은 ESG 지속 가능성의 의미에서 매우 중요합니다. 함께 해 주기 바랍니다. 함께 지구를 지켜야 합니다. </p>
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+                <div class="ceo-yoon ap">
+                    <div class="yoon-img">
+                        <img src="./yoon.png">
+                    </div>
+                    <div class="yoon-name">
+                        <p>
+                            <span>윤</span>
+                            <span>태</span>
+                            <span>근</span>
+                        </p>
+                        <p>인사이트넥서스연구원 이사장</p>
+                        <p>이솔그룹 회장</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contents2">
+                <div class="greeting-c">
+                    <!-- <i class="fa-solid fa-quote-left"></i> -->
+                    <p class="ap">In the age of digital transformation, the urgent need for the transformation is sine qua non for survival and sustainable evolution. I clearly believe that Insight Nexus Institute will guide us to the horizon beyond which we entrepreneurs will witness vision for the future. As indicated in the objectives of INI, entrepreneurs will share insights and make strong networking groups that will enhance the health of businesses, global community, and nature as well. </p>
+                    <br>
+                    <p class="ap">After working at CBS for several years, I have founded various companies in diverse fields such as Ajoo Design, Woosung, etc., and then, Esol Information & Communication for the last 30 years. As I lead ESOL Group including a multitude of affiliates, the executives of ESOL Group and those of the client companies demand new executive education programs which in practice help and give insight for their future business.  Therefore, INI will shed new light on the future in the programs in collaboration with business schools in prestigious universities in the world. Join us for the better world and better earth. </p>
+                    <br>
+                    <p class="ap">I actively play my role in various fields such as those of the improvement of women's right, low birth rate, and the environment protection. I often donate, when urgently necessary, for the prompt change or improvement in specific fields. </p>
+                    <br>
+                    <p class="ap">In the past decade, ESG has been emphasized and now even strongly demanded in every field in society. This is unavoidable imperative for global community in the face of global climate  crisis. In various fields, I promoted ESG in many ways by donating, actively participating in the related campaigns, helping establishing associations for it, and even preparing an ESG bill and making efforts to get it passed in the Congress in Korea,  first in the world for better communities and earth. The bill is especially important in the sense of its sustainability. Please join us and let's save earth! </p>
+                    <!-- <i class="fa-solid fa-quote-right"></i> -->
+                    <br>
+                    <div class="yoon-name-eng ap">
+                        <p>
+                            <span>Tae</span>
+                            <span>Keun</span>
+                            <span>Yoon</span>
+                        </p>
+                        <p>The Chief Director of INSIGHT NEXUS INSTITUTE</p>
+                        <p>Founder & CEO of ESOL Group</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bglogo">
+                <img src="../img/logo/wl-big.png">
+                <img src="../img/logo/wr-big.png">
+            </div>
+        </section>
+    </main>
+<!-- 푸터 -->
+    <footer id="footer">
+        <section class="footer-a">
+            <div class="footer-a-1">
+                <a href="../"><img src="../img/logo/long-test-w.png"></a>
+            </div>
+            <div class="footer-a-2">
+                <div>
+                    <h3>(주)인사이트넥서스인스티튜트</h3>
+                </div>
+                <div>
+                    <p>서울특별시 강남구 논현로 746 석호빌딩 301호</p>
+                    <p>대표 | 박성일</p>
+                    <p>사업자등록번호 | 614-87-02638</p>
+                    <p>대표전화 | +82-2-545-7781</p>
+                </div>
+            </div>
+            <a href="./about/location.html" class="footer-a-2-link">
+                오시는 길 
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </section>
+        <section class="footer-b">
+            <div class="footer-b-1">
+                <p>연구원 소개</p>
+                <ul>
+                    <li><a href="../about/greeting.html">인사말</a></li>
+                    <li><a href="../about/mission.html">미션 및 비전</a></li>
+                    <li><a href="../about//history.html">연혁</a></li>
+                    <li><a href="../about/location.html">오시는 길</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-b-2">
+                <p>구성원</p>
+                <ul>
+                    <li><a href="../company/organization.html">조직도</a></li>
+                    <li><a href="../company/committee1.html">고문단</a></li>
+                    <li><a href="../company/committee2.html">운영자문단</a></li>
+                    <li><a href="../company/employees.html">임직원</a></li>
+                    <li><a href="../company/partnership.html">협력업체</a></li>
+                </ul>
+            </div>
+            <div class="footer-b-3">
+                <p>입학</p>
+                <ul>
+                    <li><a href="../admission/process.html">입학절차</a></li>
+                    <li><a href="../admission/add.html">등록하기</a></li>
+                </ul>
+            </div>
+            <div class="footer-b-4">
+                <p>프로그램</p>
+                <ul>
+                    <li><a href="../program/about.html">소개</a></li>
+                    <li><a href="../program/curriculum.html">커리큘럼</a></li>
+                    <li><a href="../program/faculty.html">교수진</a></li>
+                    <li><a href="../program/resource.html">자료실</a></li>
+                </ul>
+            </div>
+            <div class="footer-b-5">
+                <p>커뮤니티</p>
+                <ul>
+                    <li><a href="../community/notice.html">공지사항</a></li>
+                    <li><a href="../community/news.html">소식</a></li>
+                    <li><a href="../community/gallery.html">미디어</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="footer-c">
+            <span>ⓒ2024 (주)인사이트넥서스연구원. ALL RIGHTS RESERVED.</span>
+        </section>
+    </footer>
+<!-- 자바스크립트 -->
+    <script> //위로가기 버튼
+        window.addEventListener('scroll', () => {
+            const topBtn = document.querySelector('#topBtn');
+            if (window.scrollY > 200)
+            {topBtn.style.display = "block";} 
+            else {topBtn.style.display = "none";}
+        })
+        function topBtnAction(){
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+    <script src="../stickynav.js"></script>
+    <script src="../appear.js"></script>
+    <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
+</body>
+</html>

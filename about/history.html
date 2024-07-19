@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../default.css">
+    <link rel="icon" href="../img/logo/wl-yb(favicon).png">
+    <link rel="apple-touch-icon" href="../img/logo/wl-yb(favicon).png"/>
+    <title>인사이트넥서스연구원</title>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <style>
+        .content{
+            width: 100%;
+            max-width: 700px;
+        }
+        .history-list{
+            width: 100%;
+        }
+        .history-contents-title{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0 50px 0 ;
+            font-size: 2.5em;
+            text-shadow: var(--text-shadow);
+        }
+        .history-contents-title p span{
+            font-family: 'Freesentation-9Black';
+            font-size: 1.5em;
+            font-weight: 500;
+            color: rgb(226, 98, 43);
+        }
+        .year-item{
+            width: 100%;
+            padding-bottom: 30px;
+        }
+        .year{
+            width: 100%;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding-bottom: 15px;
+        }
+        .year span{
+            border-left: 4px solid #911515;
+            padding-left: 5px;
+        }
+        .year-item .items li{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: 100%;
+            padding-bottom: 15px;
+        }
+        .year-item .items li span:first-child{
+            font-weight: bold;
+            color: var(--keycolor);
+            padding-right: 10px;
+        }
+        
+        .cl{
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+        .cl img{
+            width: 50%;
+            filter: brightness(97%) drop-shadow(2px 3px 3px rgba(182, 172, 148, 0.888));
+            /* position: absolute; */
+        }
+
+        @media (max-width:529px) {
+            .history-contents-title{
+                font-size: 2em;
+            }
+        }  
+        @media (max-width:422px) {
+            .history-contents-title{
+                font-size: 1.7em;
+                margin-bottom:  15px;
+            }
+        }  
+        @media (max-width:369px) {
+            .history-contents-title{
+                font-size: 1.3em;
+            }
+        }  
+    </style>
+</head>
+<body>
+    <button id="topBtn" class="corner" onclick="topBtnAction()"><i class="fa-solid fa-chevron-up"></i></button>
+    <button button data-tally-open="3E17NL" data-tally-hide-title="1"data-tally-overlay="1" class="corner" id="q">?</button>
+    <input type="checkbox" name="allmenu" id="all_menu-toggle" class="dpnone">
+    <header>
+        <div class="header-wrap">
+            <div id="header-logo">
+                <a href="../">
+                    <img src="../img/logo/hl-b.png" alt="로고이미지" style="width: 55px;" id="logo-img">
+                </a>
+
+            </div>
+            <div class="gnb">
+                <ul class="gnb_list">
+                    <li class="gnb_lv1-item">
+                        <a href="../about/greeting.html">소개</a>
+                        <ul class=" gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="../about/greeting.html">인사말</a></li>
+                            <li class="gnb_item-lv2"><a href="../about/mission.html">미션 및 비전</a></li>
+                            <li class="gnb_item-lv2"><a href="../about/history.html">연혁</a></li>
+                            <li class="gnb_item-lv2"><a href="../about/location.html">오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="../company/committee1.html">구성원</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="../company/organization.html">조직도</a></li>
+                            <li class="gnb_item-lv2"><a href="../company/committee1.html">고문단</a></li>
+                            <li class="gnb_item-lv2"><a href="../company/committee2.html">운영자문단</a></li>
+                            <li class="gnb_item-lv2"><a href="../company/employees.html">임직원</a></li>
+                            <li class="gnb_item-lv2"><a href="../company/partnership.html">협력업체</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="../admission/process.html">입학</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="../admission/process.html">입학절차</a></li>
+                            <li class="gnb_item-lv2"><a href="../admission/add.html">등록하기</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="../program/about.html">프로그램</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="../program/about.html">소개</a></li>
+                            <li class="gnb_item-lv2"><a href="../program/curriculum.html">커리큘럼</a></li>
+                            <li class="gnb_item-lv2"><a href="../program/faculty.html">교수진</a></li>
+                            <li class="gnb_item-lv2"><a href="../program/resource.html">자료실</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_lv1-item">
+                        <a href="../community/notice.html">커뮤니티</a>
+                        <ul class="gnb_list-lv2">
+                            <li class="gnb_item-lv2"><a href="../community/notice.html">공지사항</a></li>
+                            <li class="gnb_item-lv2"><a href="../community/news.html">소식</a></li>
+                            <li class="gnb_item-lv2"><a href="../community/gallery.html">미디어</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-menu">
+                <a href="../user/login.html" class="lang-wrap">
+                    <div class="lang-btn">
+                        <div class="lang-btn">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                    </div>
+                </a>
+                <label for="all_menu-toggle" class="all_menu-btn">
+                    <i class="fa-solid fa-bars all_menu-btn-icon"></i>
+                </label>
+            </div>
+        </div>
+    </header>
+<!-- 전체메뉴(숨긴메뉴) -->
+    <div class="all_menu-top">
+        <label for="all_menu-toggle" class="all_menu-top-x">
+            <i class="fa-solid fa-x"></i>
+        </label>
+    </div>
+    <div id="all_menu">
+        <div class="all-menu">
+            <div class="all-menu-row">
+                <a class="all-menu-row-sec1">연구원 소개</a>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="../about/greeting.html">인사말</a></li>
+                    <li class="all-menu-row-item"><a href="../about/mission.html">미션 및 비전</a></li>
+                    <li class="all-menu-row-item"><a href="../about/history.html">연혁</a></li>
+                    <li class="all-menu-row-item"><a href="../about/location.html">오시는 길</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">구성원</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="../company/organization.html">조직도</a></li>
+                    <li class="all-menu-row-item"><a href="../company/committee1.html">고문단</a></li>
+                    <li class="all-menu-row-item"><a href="../company/committee2.html">운영자문단</a></li>
+                    <li class="all-menu-row-item"><a href="../company/employees.html">임직원</a></li>
+                    <li class="all-menu-row-item"><a href="../company/partnership.html">협력업체</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">입학</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="../admission/process.html">입학절차</a></li>
+                    <li class="all-menu-row-item"><a href="../admission/add.html">등록하기</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">프로그램</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="../program/about.html">소개</a></li>
+                    <li class="all-menu-row-item"><a href="../program/curriculum.html">커리큘럼</a></li>
+                    <li class="all-menu-row-item"><a href="../program/faculty.html">교수진</a></li>
+                    <li class="all-menu-row-item"><a href="../program/resource.html">자료실</a></li>
+                </ul>
+            </div>
+            <div class="all-menu-row">
+                <div class="all-menu-row-sec1">커뮤니티</div>
+                <ul class="all-menu-row-sec2">
+                    <li class="all-menu-row-item"><a href="../community/notice.html">공지사항</a></li>
+                    <li class="all-menu-row-item"><a href="../community/news.html">소식</a></li>
+                    <li class="all-menu-row-item"><a href="../community/gallery.html">미디어</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <label for="all_menu-toggle" class="all_menu-back"></label>
+<!-- 메인 -->
+
+    <main>
+        <section class="local-head">
+            <span class="local-title">연혁</span>
+            <div class="local-head-img-wrap">
+                <img src="../about/history head.jpg">
+            </div>
+        </section>
+        <nav id="sticky-nav">
+            <div class="navbar">
+                <a href="../about/greeting.html"class="navbtn">인사말</a>
+                <a href="../about/mission.html"class="navbtn">미션 및 비전</a>
+                <a href="../about/history.html"class="navbtn navbtn-this">연혁</a>
+                <a href="../about/location.html"class="navbtn">오시는길</a>
+            </div>
+        </nav>
+        <section class="contents">
+            <div class="content content1">
+                <div class="cl">
+                    <img src="../img/logo/yl yr.png">
+                </div>
+                <div class="history-contents-title ap2">
+                    <p>최고의 <span>인사이트</span>를 한 곳에</p>
+                </div>
+                <div class="history-wrap">
+                    <div class="history-list">
+                        <div class="year-item">
+                            <div class="year ap">
+                                <span>2024</span>
+                            </div>
+                            <ul class="items">
+                               <li class="ap">
+                                    <span>7</span>
+                                    <span>인사이트넥서스연구원 & 대구보건대학교 「글로컬대학30 인재 양성을 위한 공동발전」업무협약식</span>
+                               </li> 
+                               <li class="ap">
+                                    <span>6</span>
+                                    <span>보스턴 하버드 대학교 현지 연수 및 수료식</span>
+                               </li> 
+                               <li class="ap">
+                                    <span>5</span>
+                                    <span>인사이트넥서스연구원 & 월드비전 MOU 협약 체결</span>
+                               </li> 
+                               <li class="ap">
+                                    <span>5</span>
+                                    <span>인사이트넥서스연구원 & 중원대학교 MOU 협약 체결</span>
+                               </li> 
+                               <li class="ap">
+                                    <span>4</span>
+                                    <span>제 1기 원우회 창단식</span>
+                               </li> 
+                               <li class="ap">
+                                    <span>3</span>
+                                    <span>제 1기 인사이트넥서스연구원 최고경영자 프로그램 개최</span>
+                               </li> 
+                            </ul>
+                        </div>
+                        <div class="year-item">
+                            <div class="year ap">
+                                <span>2023</span>
+                            </div>
+                            <ul class="items">
+                               <li class="ap">
+                                    <span>9</span>
+                                    <span>2023.09.03 인사이트넥서스연구원 설립</span>
+                               </li> 
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="bglogo">
+                <img src="../img/logo/wl-big.png">
+                <img src="../img/logo/wr-big.png">
+            </div>
+        </section>
+
+
+
+
+
+    </main>
+<!-- 푸터 -->
+    <footer id="footer">
+        <section class="footer-a">
+            <div class="footer-a-1">
+                <a href="../"><img src="../img/logo/long-test-w.png"></a>
+            </div>
+            <div class="footer-a-2">
+                <div>
+                    <h3>(주)인사이트넥서스인스티튜트</h3>
+                </div>
+                <div>
+                    <p>서울특별시 강남구 논현로 746 석호빌딩 301호</p>
+                    <p>대표 | 박성일</p>
+                    <p>사업자등록번호 | 614-87-02638</p>
+                    <p>대표전화 | +82-2-545-7781</p>
+                </div>
+            </div>
+            <a href="./about/location.html" class="footer-a-2-link">
+                오시는 길 
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </section>
+        <section class="footer-b">
+            <div class="footer-b-1">
+                <p>연구원 소개</p>
+                <ul>
+                    <li><a href="../about/greeting.html">인사말</a></li>
+                    <li><a href="../about/mission.html">미션 및 비전</a></li>
+                    <li><a href="../about//history.html">연혁</a></li>
+                    <li><a href="../about/location.html">오시는 길</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-b-2">
+                <p>구성원</p>
+                <ul>
+                    <li><a href="../company/organization.html">조직도</a></li>
+                    <li><a href="../company/committee1.html">고문단</a></li>
+                    <li><a href="../company/committee2.html">운영자문단</a></li>
+                    <li><a href="../company/employees.html">임직원</a></li>
+                    <li><a href="../company/partnership.html">협력업체</a></li>
+                </ul>
+            </div>
+            <div class="footer-b-3">
+                <p>입학</p>
+                <ul>
+                    <li><a href="../admission/process.html">입학절차</a></li>
+                    <li><a href="../admission/add.html">등록하기</a></li>
+                </ul>
+            </div>
+            <div class="footer-b-4">
+                <p>프로그램</p>
+                <ul>
+                    <li><a href="../program/about.html">소개</a></li>
+                    <li><a href="../program/curriculum.html">커리큘럼</a></li>
+                    <li><a href="../program/faculty.html">교수진</a></li>
+                    <li><a href="../program/resource.html">자료실</a></li>
+                </ul>
+            </div>
+            <div class="footer-b-5">
+                <p>커뮤니티</p>
+                <ul>
+                    <li><a href="../community/notice.html">공지사항</a></li>
+                    <li><a href="../community/news.html">소식</a></li>
+                    <li><a href="../community/gallery.html">미디어</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="footer-c">
+            <span>ⓒ2024 (주)인사이트넥서스연구원. ALL RIGHTS RESERVED.</span>
+        </section>
+    </footer>
+<!-- 자바스크립트 -->
+    <script>
+    window.addEventListener('scroll', () => {
+        const topBtn = document.querySelector('#topBtn');
+        if (window.scrollY > 200) {
+            topBtn.style.display = "block";
+        } 
+        else {
+            topBtn.style.display = "none";
+        }
+
+    })
+    function topBtnAction(){
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+    <script src="../stickynav.js"></script>
+    <script src="../appear.js"></script>
+    <script src="../appear2.js"></script>
+    <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
+</body>
+</html>
