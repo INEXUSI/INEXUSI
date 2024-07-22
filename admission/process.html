@@ -16,11 +16,70 @@
         }
         .centent1{
             width: 100%;
-            max-width: 1000px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            max-width: 1330px;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            grid-auto-rows: auto;
+            grid-gap: 12px;
         }
+        .pitem div:first-child{
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            overflow: hidden;
+            border-bottom: 1px solid #000000;
+        }
+        .pitem-num{
+            
+            display: inline;
+            font-size: 200px;
+            margin-bottom: -100px;
+            font-weight: bold;
+            height: 80px;
+            line-height: 200px;
+            border-radius: 50% 50% 0 0;
+            overflow: hidden;
+        }
+        
+        .item {
+            /* width: 22%; */
+            text-align: center;
+        }
+        
+        .number {
+            font-size: min(1000%,160px);
+            font-weight: bold;
+            height: 95px;
+            line-height: 130px;
+            border-radius: 50% 50% 0 0;
+            margin-bottom: -80px;
+            overflow: hidden;
+            border-image: fill 0 linear-gradient(to top, rgba(255, 191, 0, 0.451) 0%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        h3 {
+            font-size: 16px;
+            margin: 90px 0 10px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.4;
+            margin: 0 0 15px;
+        }
+
+        .icon {
+            font-size: 24px;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+        }  
         </style>
     <script async src="https://tally.so/widgets/embed.js"></script>
 </head>
@@ -169,15 +228,32 @@
             <div class="content0 ap2">
                 <p>ADDMISION PROCESS</p>
             </div>
+
             <div class="content centent1 ap">
-                <div class="ready">
-                    <h1>컨텐츠 준비 중입니다.</h1>
-                    <p>
-                        현재 페이지는 준비중입니다. <br>
-                        빠른 시일내에 서비스를 제공할 수 있도록 노력하겠습니다. <br>
-                        감사합니다. <br>
-                    </p>
-                </div>
+                    <div class="item">
+                      <div class="number">01</div>
+                      <h3>SHAPE TITLE</h3>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus, ante lacinia dignissim commodo</p>
+                      <i class="icon">&#x1F9CD;</i>
+                    </div>
+                    <div class="item">
+                      <div class="number">02</div>
+                      <h3>SHAPE TITLE</h3>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus, ante lacinia dignissim commodo</p>
+                      <i class="icon">&#x1F3E2;</i>
+                    </div>
+                    <div class="item">
+                      <div class="number">03</div>
+                      <h3>SHAPE TITLE</h3>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus, ante lacinia dignissim commodo</p>
+                      <i class="icon">&#x1F695;</i>
+                    </div>
+                    <div class="item">
+                      <div class="number">04</div>
+                      <h3>SHAPE TITLE</h3>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus, ante lacinia dignissim commodo</p>
+                      <i class="icon">&#x1F4CD;</i>
+                    </div>
             </div>
             <div class="bglogo">
                 <img src="../img/logo/wl-big.png">
