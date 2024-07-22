@@ -42,8 +42,20 @@ main{
 
     position: relative;
     padding: 2rem;
-}
+    
+    --mxw: 1330px;
 
+}
+.content0{
+    width: 100%;
+    max-width: var(--mxw);
+    padding: 25px 25px 0 25px;
+}
+.content0 p{
+    border-left: 4px solid var(--keycolor);
+    padding-left: 10px;
+    font-size: 1.5em;
+}
 
 
 
@@ -158,6 +170,21 @@ nav{
 
 
 
+
+
+
+
+/*  */
+.ready{
+    margin-top: 10vw;
+    text-align: center;
+}
+.ready h1{
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
 @media (max-width: 385px){
     .bglogo{
         scale: 2.5;
@@ -181,6 +208,15 @@ nav{
     .navbar a{
         min-width: 0px;
     }
+    .ready {
+        margin: 25vw 0 15vw 0;
+        font-size: .9em;
+    }
+    .ready h1{
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
 }
 
 @keyframes headopen {
@@ -195,15 +231,3 @@ nav{
 }
 
 
-
-
-/*  */
-.ready{
-    margin-top: 10vw;
-    text-align: center;
-}
-.ready h1{
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 5px;
-}

@@ -54,7 +54,8 @@
         .accordion-more a{
             border: 1px solid #000;
             border-radius: 30px;
-            padding: 10px;
+            padding: 10px 15px;
+            font-weight: bold;
             background: #fff;
             font-size: 0.8em;
             transition: padding .2s ease-out;
@@ -123,9 +124,11 @@
         .news-wrap{
             overflow-x: scroll;
             display: flex;
-            align-items: center;
+            align-items: start;
             gap: 1em;
             padding: 1em 0 .5em .5em;
+            /* scroll-behavior: smooth; */
+
         }
         .news-wrap::-webkit-scrollbar {
             width: 20px;
@@ -146,33 +149,38 @@
         }
         .news-item{
             flex-shrink: 0;
-            border: 1px solid #eeeeee47;
-            border-radius: 20px;            
-            width: 200px;
+            width: 250px;
             aspect-ratio: 10/11;
             display: flex;
             flex-direction: column;
-            box-shadow: 0px 0px 10px -3px #0000003e;
         }
         .news-item-top{
-            height: 60%;
             width: 100%;
-            border-bottom: var(--bd-test);
+            aspect-ratio: 16/10;
+            border: 1px solid #0000000b;
+            border-radius: 24px;
+            box-shadow:  0px 0px 10px -3px #0000003e;
+            overflow: hidden;
+            transition: filter .2s ease-out;
+        }
+        .news-item:not(:hover) .news-item-top{
+            filter: brightness(80%);
+        }
+        .news-item-top img{
+            width: 100%;
         }
         .news-item-bottom{
             display: flex;
             flex-direction: column;
             padding: 5px;
-            
         }
         .news-item-text:nth-child(1){
-            font-size: .7em;
+            font-size: 18px;
+            margin: 15px 0;
         }
-        .news-item-text:nth-child(2){
-            font-size: 1.1em;
-        }
-        .news-item-text:nth-child(3){
-            font-size: .9em;
+        .news-item-text:last-child{
+            font-size: 16px;
+            color: #aaa;
         }
         .news-item-text{
             width: 100%;
@@ -898,70 +906,64 @@
                 </div>
             </section>
             <div class="news-wrap ap">
-                <a href="" class="news-item">
+                <a href="./community/news.html" class="news-item">
                     <div class="news-item-top">
-                        <img src="" alt="섬네일">
+                        <img src="./img/stock/desk1.jpg" alt="섬네일">
                     </div>
                     <div class="news-item-bottom">
-                            <p class="news-item-text">0000-00-00</p>
-                            <p class="news-item-text">제목</p>
-                            <p class="news-item-text">내용 내용 내용</p>
+                        <p class="news-item-text">“9월 개정 전자금융거래법 시행 완벽준비!" 네이버클라우드, ‘선불업 등록 올인원 패키지’ 프로모션 실시</p>
+                        <p class="news-item-text">0000.00.00</p>
                     </div>
                 </a>
                 <a href="" class="news-item">
                     <div class="news-item-top">
-                        <img src="" alt="섬네일">
+                        <img src="./img/stock/1.jpg" alt="섬네일">
                     </div>
                     <div class="news-item-bottom">
-                            <p class="news-item-text">0000-00-00</p>
-                            <p class="news-item-text">제목</p>
-                            <p class="news-item-text">내용 내용 내용</p>
+                        <p class="news-item-text">네이버 웨일 브라우저, 르노코리아 자동차에 탑재된다… 웹 플랫폼 생태계 강화</p>
+                        <p class="news-item-text">0000.00.00</p>
                     </div>
                 </a>
                 <a href="" class="news-item">
                     <div class="news-item-top">
-                        <img src="" alt="섬네일">
+                        <img src="./img/stock/book-history.jpg" alt="섬네일">
                     </div>
                     <div class="news-item-bottom">
-                            <p class="news-item-text">0000-00-00</p>
-                            <p class="news-item-text">제목</p>
-                            <p class="news-item-text">내용 내용 내용</p>
+                        <p class="news-item-text">제목</p>
+                        <p class="news-item-text">0000.00.00</p>
                     </div>
                 </a>
                 <a href="" class="news-item">
                     <div class="news-item-top">
-                        <img src="" alt="섬네일">
+                        <img src="./img/stock/book1.jpg" alt="섬네일">
                     </div>
                     <div class="news-item-bottom">
-                            <p class="news-item-text">0000-00-00</p>
-                            <p class="news-item-text">제목</p>
-                            <p class="news-item-text">내용 내용 내용</p>
+                        <p class="news-item-text">제목</p>
+                        <p class="news-item-text">0000.00.00</p>
                     </div>
                 </a>
                 <a href="" class="news-item">
                     <div class="news-item-top">
-                        <img src="" alt="섬네일">
+                        <img src="./img/stock/book3.jpg" alt="섬네일">
                     </div>
                     <div class="news-item-bottom">
-                            <p class="news-item-text">0000-00-00</p>
-                            <p class="news-item-text">제목</p>
-                            <p class="news-item-text">내용 내용 내용</p>
+                        <p class="news-item-text">제목</p>
+                        <p class="news-item-text">0000.00.00</p>
                     </div>
                 </a>
                 <a href="" class="news-item">
                     <div class="news-item-top">
-                        <img src="" alt="섬네일">
+                        <img src="./img/stock/city1.jpg" alt="섬네일">
                     </div>
                     <div class="news-item-bottom">
-                            <p class="news-item-text">0000-00-00</p>
-                            <p class="news-item-text">제목</p>
-                            <p class="news-item-text">내용 내용 내용</p>
+                        <p class="news-item-text">제목</p>
+                        <p class="news-item-text">0000.00.00</p>
                     </div>
                 </a>
 
                 
 
-                <a href="" class="news-more-wrap">
+                <a href="./community/news.html" class="news-more-wrap">
                     <button class="news-more-btn"><i class="fa-solid fa-chevron-right"></i></button>
                 </a>
             </div>
