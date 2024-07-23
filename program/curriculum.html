@@ -11,15 +11,47 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../default.css">
     <style>
+        @font-face {
+            font-family: 'MoveSans-Bold';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/MoveSans-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
         .contents{
             padding: 2rem 0 0 0
         }
-        .centent1{
+        .ctitle{
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .cc{
             width: 100%;
-            max-width: 1000px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+            grid-auto-rows: auto;
+            grid-gap: 20px;
+
+            margin-top: 80px;
+        }
+        .ccitem{
+            border-top: 4px solid #000;
+            margin-bottom: 30px;
+        }
+        .week-num{
+            padding: 15px 0 0px 0;
+            font-family: 'MoveSans-Bold';
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .p-title{
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .p-title2{
+            font-weight: bold;
+        }
+        .fc{
+            color: #e37e13b7;
         }
     </style>
     <script async src="https://tally.so/widgets/embed.js"></script>
@@ -172,15 +204,116 @@
             <div class="content0 ap2">
                 <p>CURRICULUM</p>
             </div>
-            <div class="content centent1 ap">
-                <div class="ready">
-                    <h1>컨텐츠 준비 중입니다.</h1>
-                    <p>
-                        현재 페이지는 준비중입니다. <br>
-                        빠른 시일내에 서비스를 제공할 수 있도록 노력하겠습니다. <br>
-                        감사합니다. <br>
-                    </p>
+            <div class="content content1 fixsize">
+                <div class="ctop ap2">
+                    <p class="ctitle">최고경영자과정</p>
+                    <p>상반기/하반기 연 2회 14주 과정</p>
+                    <p>*워크샵 및 기업탐방 일정은 포함되어있지않습니다.</p>
                 </div>
+                <ul class="cc">
+                   <li class="ccitem ap">
+                        <p class="week-num">00</p>
+                        <p class="p-title">오프닝 세레모니</p>
+                        <p class="p-desc">
+                            입학생 오프닝 세레모니 및 오리엔테이션 행사
+                        </p>
+                        <p class="p-desc fc">
+                            <i class="fa-solid fa-location-dot"></i> JW메리어트호텔 연회장
+                        </p>
+                    </li>
+                    <li class="ccitem ap">
+                       <p class="week-num">01</p>
+                       <p class="p-title">강연</p>
+                       <p class="p-title2">Disruptive Innovation and Strategies(파괴적 혁신과 전략)</p>
+                       <p class="p-desc fc"><i class="fa-solid fa-user-tie"></i><a href="./faculty.html"> Rory McDonald</a></p>
+                       <p class="p-desc fc"><i class="fa-solid fa-location-dot"></i> 여의도 FKI 컨퍼런스 센터</p>
+                    </li>
+                    <li class="ccitem ap">
+                        <p class="week-num">02</p>
+                        <p class="p-title">강연</p>
+                        <p class="p-title2">Disruptive Innovation and Strategies(파괴적 혁신과 전략)</p>
+                        <p class="p-desc fc"><i class="fa-solid fa-user-tie"></i><a href="./faculty.html"> Rory McDonald</a></p>
+                        <p class="p-desc fc"><i class="fa-solid fa-location-dot"></i> 여의도 FKI 컨퍼런스 센터</p>
+                    </li>
+                    <li class="ccitem ap">
+                       <p class="week-num">03</p>
+                       <p class="p-title">강연</p>
+                       <p class="p-title2">Build Value by Strategically Implementing ESG Initiatives(ESG 이니셔티브의 전락적 실행을 통한 가치)</p>
+                       <p class="p-desc fc"><i class="fa-solid fa-user-tie"></i><a href="./faculty.html">George Serafeim</a></p>
+                       <p class="p-desc fc"><i class="fa-solid fa-location-dot"></i> 여의도 FKI 컨퍼런스 센터</p>
+
+                    </li>
+                    <li class="ccitem ap">
+                        <p class="week-num">04</p>
+                        <p class="p-title">강연</p>
+                        <p class="p-title2">Build Value by Strategically Implementing ESG Initiatives(ESG 이니셔티브의 전락적 실행을 통한 가치)</p>
+                        <p class="p-desc fc"><i class="fa-solid fa-user-tie"></i><a href="./faculty.html">George Serafeim</a></p>
+                        <p class="p-desc fc"><i class="fa-solid fa-location-dot"></i> 여의도 FKI 컨퍼런스 센터</p>
+                    </li>
+                    <li class="ccitem ap">
+                        <p class="week-num">05</p>
+                        <p class="p-title">강연</p>
+                        <p class="p-title2">What Every Executive Needs To Know About AI(모든 경영진이 AI에 대해 알아야 할 것들)</p>
+                        <p class="p-desc fc"><i class="fa-solid fa-user-tie"></i><a href="./faculty.html">George Westerman</a></p>
+                        <p class="p-desc fc"><i class="fa-solid fa-location-dot"></i> 여의도 FKI 컨퍼런스 센터</p>
+                    </li>
+                    <li class="ccitem ap">
+                        <p class="week-num">06</p>
+                        <p class="p-title">강연</p>
+                        <p class="p-title2">What Every Executive Needs To Know About AI(모든 경영진이 AI에 대해 알아야 할 것들)</p>
+                        <p class="p-desc fc"><i class="fa-solid fa-user-tie"></i><a href="./faculty.html">George Westerman</a></p>
+                        <p class="p-desc fc"><i class="fa-solid fa-location-dot"></i> 여의도 FKI 컨퍼런스 센터</p>
+                    </li>
+                    <li class="ccitem ap">
+                        <p class="week-num">07</p>
+                        <p class="p-title">강연</p>
+                        <p class="p-title2">A Behavioral Science Foundation for Inclusive Leadership and Ethical AI Strategy(포용적 리더십과 윤리적 AI 전략을 위한 과학 기반 행동)</p>
+                        <p class="p-desc fc"><i class="fa-solid fa-user-tie"></i><a href="./faculty.html">Renee Richardson Gosline</a></p>
+                        <p class="p-desc fc"><i class="fa-solid fa-location-dot"></i> 여의도 FKI 컨퍼런스 센터</p>
+                    </li>
+                    <li class="ccitem ap">
+                        <p class="week-num">08</p>
+                        <p class="p-title">강연</p>
+                        <p class="p-title2">A Behavioral Science Foundation for Inclusive Leadership and Ethical AI Strategy(포용적 리더십과 윤리적 AI 전략을 위한 과학 기반 행동)</p>
+                        <p class="p-desc fc"><i class="fa-solid fa-user-tie"></i><a href="./faculty.html">Renee Richardson Gosline</a></p>
+                        <p class="p-desc fc"><i class="fa-solid fa-location-dot"></i> 여의도 FKI 컨퍼런스 센터</p>
+                    </li>
+                    <li class="ccitem ap">
+                        <p class="week-num">09</p>
+                        <p class="p-title">시험</p>
+                        <p class="p-title2">The Business Case for Action(실천을 위한 비즈니스 사례)</p>
+                        <p class="p-desc fc"><i class="fa-solid fa-user-tie"></i><a href="./faculty.html">Renee Richardson Gosline</a></p>
+                        <p class="p-desc fc"><i class="fa-solid fa-location-dot"></i> 여의도 FKI 컨퍼런스 센터</p>
+                    </li>
+                    <li class="ccitem ap">
+                       <p class="week-num">10</p>
+                       <p class="p-title">시험</p>
+                       <p class="p-desc"></p>
+                       
+                    </li>
+                    <li class="ccitem ap">
+                       <p class="week-num">11</p>
+                       <p class="p-title">시험</p>
+                       <p class="p-desc"></p>
+                       
+                    </li>
+                    <li class="ccitem ap">
+                       <p class="week-num">12</p>
+                       <p class="p-title">강연</p>
+                       <p class="p-desc"></p>
+                       
+                    </li>
+                    <li class="ccitem ap">
+                        <p class="week-num">13</p>
+                        <p class="p-title">강연</p>
+                        <p class="p-desc"></p>
+                    </li>
+                    <li class="ccitem ap">
+                        <p class="week-num">14</p>
+                        <p class="p-title">강연</p>
+                        <p class="p-desc"></p>
+                    </li>
+                </ul>
             </div>
             <div class="bglogo">
                 <img src="../img/logo/wl-big.png">

@@ -173,6 +173,12 @@ nav{
 
 
 
+/*  */
+.fixsize{
+    width: 100%;
+    max-width: var(--mxw);
+    padding: 25px 25px 0 25px;
+}
 
 /*  */
 .ready{
