@@ -184,6 +184,10 @@ nav{
     font-weight: bold;
     margin-bottom: 5px;
 }
+/*  */
+.mt-40{
+    margin-top: 40px;
+}
 
 @media (max-width: 385px){
     .bglogo{
