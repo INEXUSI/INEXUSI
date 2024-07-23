@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../default.css">
     <style>
         .contents{
-            padding: 2rem 0 0 0
+            padding: 2rem 0 0 0;
         }
         .centent1{
             width: 100%;
@@ -96,19 +96,33 @@
                 padding-left: 10px;
             }
             .centent1{
-                grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(50vw, 1fr));
                 gap: 0;
             }
             .pitem {
                 width: 50vw;
             }
             .number {
-            --nz: 180px;
-            --nmb: -62px;
+                --nz: 180px;
+                --nmb: -62px;
+                /* width: 100%;
+                text-align: center; */
             }
-            h3 {
-            font-size: 19px;
-            margin-top: 80px;
+            .pitem h3 {
+                font-size: 19px;
+                margin-top: 80px;
+            }
+        }
+        @media (max-width:400px) {
+            .number{
+                --nz: 150px;
+                --nmb: -50px;
+            }
+        }
+        @media (max-width:320px) {
+            .number{
+                --nz: 130px;
+                --nmb: -50px;
             }
         }
         </style>
@@ -297,7 +311,7 @@
                 <p>지원자격</p>
             </div>
             <div class="content content2 ap">
-                ▪
+                ▪ 이솔그룹 및 협력사 임원진과 관계 전문가
             </div>
 
 
