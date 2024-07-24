@@ -21,21 +21,24 @@
         }
         .cmts{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(20%,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(19%,1fr));
             grid-auto-rows: auto;
             grid-gap: 12px;
+            text-align: center;
         }
         .cmt{
             display: flex;
             width: 100%;
             margin-bottom: 20px;
-            padding: 8px;
+            padding: 12px;
             border-radius: 23px;
             background-color: #f8f8f887;
             box-shadow: 0 0 5px -1px #c5c5c5;
             flex-direction: column;
             text-align: center;
-            max-width: 250px;
+            /* max-width: 250px; */
+            /* min-width: 187px; */
+
         }
 
         .cmt-l{
@@ -43,7 +46,7 @@
         }
         .cmt-l img{
             width: 100%;
-            border-radius: 15px;
+            border-radius: 11px;
         }
         .cmt-r{
             width: 100%;
@@ -69,14 +72,25 @@
                 font-size: .9em;
             }
         }
-        @media (max-width:670px) {
+        @media (max-width:830px) {
             .cmts{
-            grid-template-columns: repeat(auto-fit, minmax(48%,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(30%,1fr));
             grid-gap: 5px;
+            }
+            .content0{
+                padding-left: 15px;
+            }
         }
-        .content0{
-            padding-left: 15px;
+        @media (max-width:650px) {
+            .cmts{
+                grid-template-columns: repeat(auto-fit, minmax(49%,1fr));
+            }
+            .content0{
+                padding-left: 15px;
+            }
         }
+        @media (max-width:374px) {
+            .cmt{font-size: .9em;}
         }
     </style>
     <script async src="https://tally.so/widgets/embed.js"></script>
