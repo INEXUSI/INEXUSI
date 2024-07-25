@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 1.2em;
+    padding: 1.2em 0 .5em 0;
     transition: scale .2s ease-in-out;
     align-self: flex-start;
 }
@@ -35,7 +35,7 @@
 
 .namecard-name div:first-child{
     width: 100%;
-    padding: 5px 25%;
+    padding: 5px 10px;
     font-size: 1.1em;
     font-weight: bold;
     display: flex;
