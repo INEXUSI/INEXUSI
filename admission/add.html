@@ -14,16 +14,14 @@
         .contents{
             padding: 2rem 0 0 0
         }
-        .centent1,.content3{
+        .content1{
             width: 100%;
             max-width: 1000px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        .content3{
-            padding: 1em;
-        }
+
         .addm{
             margin: 20px 5px;
             padding: 15px 30px;
@@ -33,7 +31,60 @@
             background: #000;
             color: aliceblue;
         }
-        </style>
+
+        .content2{
+            width: 100%;
+            background-color: #c9c9c91b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .addp{
+            width: 100%;
+            max-width: 1440px;
+            display: flex;
+            flex-direction: row;
+            padding: 50px 10px;
+        }
+        .addp>div{
+            width: 50%;
+            padding: 30px;
+        }
+        .addp-l{
+            position: relative;
+            border-right: 1px solid #00000031;
+        }
+        .addp-l img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3D(-50%,-50%,0);
+            max-width: 200px;
+        }
+        @media (max-width:695px){
+            .addp{
+                display: flex;
+                flex-direction: column;
+            }
+            .addp>div{
+                width: 100%;
+                padding: 30px;
+            }
+            .addp-l{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .addp-l img{
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+            }
+
+        }
+    </style>
     <script async src="https://tally.so/widgets/embed.js"></script>
 </head>
 <body>
@@ -181,7 +232,14 @@
             <div class="content0 ap2">
                 <p>ADDMISION</p>
             </div>
-            <div class="content centent1 ap">
+            <div class="content0 ap">
+                <span>
+                    *지원 자격에 적합하지 않은 지원자는 승인이 되지 않으며 해당 정보는 삭제됩니다.<br>
+
+                    *입학이 승인될 시 작성해주신 전화번호와 이메일로 승인 메시지가 전송됩니다.
+                </span>
+            </div>
+            <!-- <div class="content centent1 ap">
                 <div class="ready">
                     <h1>승인된 회원만 지원가능합니다.</h1>
                     <p>
@@ -192,15 +250,18 @@
             </div>
             <div class="content0 ap2">
                 <p>프로그램 등록</p>
-            </div>
-            <div class="content content2 ap">
-                    <div class="addp">
-                        
+            </div> -->
+            <div class="content content2">
+                <div class="addp">
+                    <div class="addp-l">
+                        <img src="../img/logo/yl yr.png">
                     </div>
+                    <div class="addp-r">
+                        <iframe data-tally-src="https://tally.so/embed/3EPlqN?hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="780" frameborder="0" marginheight="0" marginwidth="0" title="프로그램 입학 정보 등록"></iframe><script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+                    </div>
+                </div>
             </div>
-            <div class="content content3 ap">
-                <iframe data-tally-src="https://tally.so/embed/3EPlqN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="780" frameborder="0" marginheight="0" marginwidth="0" title="프로그램 입학 정보 등록"></iframe><script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
-            </div>
+
             <div class="bglogo">
                 <img src="../img/logo/wl-big.png">
                 <img src="../img/logo/wr-big.png">
