@@ -163,9 +163,10 @@
             box-shadow:  0px 0px 10px -3px #0000003e;
             overflow: hidden;
             transition: filter .2s ease-out;
+            filter: brightness(95%);
         }
-        .news-item:not(:hover) .news-item-top{
-            filter: brightness(80%);
+        .news-item:hover .news-item-top{
+            filter: brightness(70%);
         }
         .news-item-top img{
             width: 100%;
@@ -177,6 +178,7 @@
         }
         .news-item-text:nth-child(1){
             font-size: 18px;
+            font-weight: bold;
             margin: 15px 0;
         }
         .news-item-text:last-child{
