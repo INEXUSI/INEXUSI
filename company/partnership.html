@@ -16,10 +16,31 @@
         }
         .centent1{
             width: 100%;
-            max-width: 1000px;
+            max-width: 1440px;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+        .ptnr{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 150px 10px 0 10px;
+        }
+        .ptnr li{
+            margin: 20px 20px;
+            filter:contrast(0) ;
+        }
+        .ptnr li:hover{
+            filter:contrast(1) ;
+        }
+        .ptnr img{
+            max-width: 120px;
+        }
+        #kt{
+            max-width: 50px;
         }
     </style>
     <script async src="https://tally.so/widgets/embed.js"></script>
@@ -169,7 +190,10 @@
             </div>
         </nav>
         <section class="contents">
-            <div class="content centent1 ap">
+            <div class="content0 ap2">
+                <p>PARTNERS</p>
+            </div>
+            <!-- <div class="content centent1 ap">
                 <div class="ready">
                     <h1>컨텐츠 준비 중입니다.</h1>
                     <p>
@@ -178,6 +202,15 @@
                         감사합니다. <br>
                     </p>
                 </div>
+            </div> -->
+            <div class="content centent1 ap">
+                <ul class="ptnr">
+                    <li><img src="./img-p/Samsung_Electronics.png"></li>
+                    <li><img src="./img-p/samsung sds.png"></li>
+                    <li><img src="./img-p/SK innovation.png"></li>
+                    <li><img src="./img-p/01_KT Wordmark.png"  id="kt"></li>
+                    <li><img src="./img-p/ranstudion.png"></li>
+                </ul>
             </div>
             <div class="bglogo">
                 <img src="../img/logo/wl-big.png">
@@ -276,6 +309,7 @@
     
     <script src="../stickynav.js"></script>
     <script src="../appear.js"></script>
+    <script src="../appear2.js"></script>
     <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
 </body>
 </html>
