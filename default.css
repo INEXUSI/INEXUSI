@@ -44,12 +44,13 @@ main{
     padding: 2rem;
     
     --mxw: 1330px;
+    --px25: 25px
 
 }
 .content0{
     width: 100%;
     max-width: var(--mxw);
-    padding: 25px 25px 0 25px;
+    padding: 25px 25px 0 var(--px25);
 }
 .content0 p{
     border-left: 4px solid var(--keycolor);

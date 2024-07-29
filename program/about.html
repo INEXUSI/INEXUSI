@@ -14,12 +14,81 @@
         .contents{
             padding: 2rem 0 0 0
         }
-        .centent1{
+        .content1{
             width: 100%;
             max-width: 1000px;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+        .content2{
+            max-width: var(--mxw);
+            width: 100%;
+            padding: var(--px25);
+        }
+        /*  */
+        .slider-container{
+            width: 100%;
+            height: 100%;
+            max-width: 80%;
+            min-width: 35%;
+            aspect-ratio: 2/1;
+            border-radius: 30px;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0px 0px 15px -5px #00000070;
+        }
+        .slider-wrapper {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            flex: 0 0 100%;
+            height: 100%;
+            /* max-height: 800px; */
+            background-size:cover;
+            background-position:center;
+        }
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.3);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .pagination {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .dot.active-dot {
+            background: white;
+        }
+
+
+        .pci-r{
+            flex-direction: row-reverse;
         }
     </style>
     <script async src="https://tally.so/widgets/embed.js"></script>
@@ -171,7 +240,38 @@
             <div class="content0 ap2">
                 <p>ABOUT</p>
             </div>
-            <div class="content centent1 ap">
+            <div class="content2">
+                <div class="slider-container program-content-slider-1"> 
+                    <div class="slider-wrapper">
+                        <div class="slide slide1" style="background-image: url('../img/home-slider-korea/KA4A5991.JPG.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('../img/home-slider-korea/KA4A8044.JPG.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('../img/home-slider-korea/KA4A5992.JPG.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('../img/home-slider-korea/\(130\).JPG.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('../img/home-slider-special/월드비전회장.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('../img/home-slider-special/카이스트부총장2.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('../img/home-slider-special/박경도콜러디.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('../img/home-slider-boston/all1.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('../img/home-slider-boston/all2.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('../img/home-slider-boston/all3.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('../img/home-slider-boston/all4.jpg');"></div>
+                    </div>
+                    <button class="slider-button prev">&#10094;</button>
+                    <button class="slider-button next">&#10095;</button>
+                    <div class="pagination"></div>
+                </div>    
+            </div>
+            <div class="content2">
+                <div class="ctop ap2">
+                    <h1 class="ctitle">INI Lecture Series & Executive Education Program</h1>
+                    <h1 class="ctitle">인사이트넥서스연구원 최고경영자 과정 프로그램</h1>
+                </div>    
+            </div>
+            <div class="content2">                    
+                    <p>상반기/하반기 연 2회 14주 과정</p>
+                    <p>*특별초청강연, 워크샵 및 기업탐방 일정은 포함되어있지않습니다.</p>
+                    <p>*수업은 매주 목요일 진행됩니다.</p>
+            </div>
+            <div class="content content1 ap">
                 <div class="ready">
                     <h1>컨텐츠 준비 중입니다.</h1>
                     <p>
@@ -279,6 +379,7 @@
     <script src="../stickynav.js"></script>
     <script src="../appear.js"></script>
     <script src="../appear2.js"></script>
+    <script src="../normalSlider.js"></script>
     <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
 </body>
 </html>
