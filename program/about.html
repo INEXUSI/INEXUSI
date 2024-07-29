@@ -14,17 +14,15 @@
         .contents{
             padding: 2rem 0 0 0
         }
-        .content1{
-            width: 100%;
-            max-width: 1000px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+
+        .content1,
         .content2{
             max-width: var(--mxw);
             width: 100%;
             padding: var(--px25);
+        }
+        .content2{
+            width: 80%;
         }
         /*  */
         .slider-container{
@@ -89,6 +87,25 @@
 
         .pci-r{
             flex-direction: row-reverse;
+        }
+
+        @media (max-width:800px) {
+            .slider-container{
+                max-width: 100%;
+            }
+            .content2{
+                width: 95%;
+            }
+        }
+        @media (max-width:450px) {
+            .slider-container{
+                aspect-ratio: 2/1.3;
+            }
+        }
+        @media (max-width:400px) {
+            .content2{
+                width: 98%;
+            }
         }
     </style>
     <script async src="https://tally.so/widgets/embed.js"></script>
@@ -240,20 +257,25 @@
             <div class="content0 ap2">
                 <p>ABOUT</p>
             </div>
-            <div class="content2">
+            <div class="content1 ap">
                 <div class="slider-container program-content-slider-1"> 
                     <div class="slider-wrapper">
-                        <div class="slide slide1" style="background-image: url('../img/home-slider-korea/KA4A5991.JPG.jpg');"></div>
-                        <div class="slide slide1" style="background-image: url('../img/home-slider-korea/KA4A8044.JPG.jpg');"></div>
-                        <div class="slide slide1" style="background-image: url('../img/home-slider-korea/KA4A5992.JPG.jpg');"></div>
-                        <div class="slide slide1" style="background-image: url('../img/home-slider-korea/\(130\).JPG.jpg');"></div>
-                        <div class="slide slide1" style="background-image: url('../img/home-slider-special/월드비전회장.jpg');"></div>
-                        <div class="slide slide1" style="background-image: url('../img/home-slider-special/카이스트부총장2.jpg');"></div>
-                        <div class="slide slide1" style="background-image: url('../img/home-slider-special/박경도콜러디.jpg');"></div>
-                        <div class="slide slide1" style="background-image: url('../img/home-slider-boston/all1.jpg');"></div>
-                        <div class="slide slide1" style="background-image: url('../img/home-slider-boston/all2.jpg');"></div>
-                        <div class="slide slide1" style="background-image: url('../img/home-slider-boston/all3.jpg');"></div>
-                        <div class="slide slide1" style="background-image: url('../img/home-slider-boston/all4.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('./c/1.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('./c/2.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('./c/3.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('./c/c1.JPG');"></div>
+                        <div class="slide slide1" style="background-image: url('./c/c2.JPG');"></div>
+                        <div class="slide slide1" style="background-image: url('./c/b2.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('./c/b3.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('./c/b6.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('./c/b1.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('./c/b5.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('./c/b10.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('./c/b11.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('./c/b7.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('./c/b8.jpg');"></div>
+                        <div class="slide slide1" style="background-image: url('./c/b9.jpg');"></div>
+                        <!-- <div class="slide slide1" style="background-image: url('./c/b4.jpg');"></div> -->
                     </div>
                     <button class="slider-button prev">&#10094;</button>
                     <button class="slider-button next">&#10095;</button>
@@ -261,26 +283,38 @@
                 </div>    
             </div>
             <div class="content2">
-                <div class="ctop ap2">
+                <div class="ap">
                     <h1 class="ctitle">INI Lecture Series & Executive Education Program</h1>
                     <h1 class="ctitle">인사이트넥서스연구원 최고경영자 과정 프로그램</h1>
                 </div>    
             </div>
             <div class="content2">                    
-                    <p>상반기/하반기 연 2회 14주 과정</p>
-                    <p>*특별초청강연, 워크샵 및 기업탐방 일정은 포함되어있지않습니다.</p>
-                    <p>*수업은 매주 목요일 진행됩니다.</p>
-            </div>
-            <div class="content content1 ap">
-                <div class="ready">
-                    <h1>컨텐츠 준비 중입니다.</h1>
-                    <p>
-                        현재 페이지는 준비중입니다. <br>
-                        빠른 시일내에 서비스를 제공할 수 있도록 노력하겠습니다. <br>
-                        감사합니다. <br>
+                    <p class="ap">
+                        프로그램에 참여하는 임원들에게 특히 인공지능과 디지털 혁신의 영향을 받아 빠르게 변화하는 비즈니스 세계에 대한 통찰력을 제공하는 것이 프로그램의 주된 목적입니다. 메가 비즈니스 트랜스포메이션(Mega Business Transformation)에 따라 글로벌 비즈니스 환경도 변화하고 있습니다. 따라서 우리는 글로벌 비즈니스가 어떻게, 왜 변화하고 있는지에 초점을 맞출 것입니다. 우리는 이 프로그램이 프로그램 참가자들의 통찰력을 촉발하고 미래를 위한 지속 가능한 발전 전략을 기반으로 그들의 비즈니스를 변화시킬 것이라고 확신합니다.
                     </p>
-                </div>
+                    <p class="ap">
+                        현재 다수의 명문 경영대학원에서는 나노초마다 쌓이는 메가 데이터를 통해 전 세계 경영진을 위한 귀중한 프로그램을 제공하고 있습니다. 인공 지능 도구는 심지어 나노초 안에 거대한 양의 분석을 제공합니다. 인공지능 도구의 이러한 분석 속도는 미래에 두 가지 결과를 암시합니다. 하나는 가능한  빨리 변화할 준비가 되어 있어야 한다는 것입니다. 다른 하나는 무시하거나 준비가 되지 않았을 때 얼마나 빨리 사업을 중단 혹은 폐업 할 것인가입니다. 
+                        선택사항이 아닙니다. 그것은 필수입니다. 피하는 것이 아니라 효과적으로 받아들이고 적용하는 것입니다. 어떻게? 개인으로서가 아니라 팀, 그룹 또는 조직으로서 지금 직면하고 있는 변화의 시대의 미랜는 여러분의 지식과 기술에 달려 있습니다. 간단하지 않습니다. 이는 매우 복잡하며 아마도 전체 비즈니스 문화를 바꿔야 할 수도 있습니다.
+                    </p>
+                    <p class="ap">
+                        본 연구원 최고경영자과정 프로그램에 참여하시면, 프로그램뿐만 아니라 프로그램에 참여하는 다른 참가자들에 의해서도 무엇을 해야 하는지, 어떻게 해야 하는지에 대한 통찰력을 얻게 될 것이라고 확신합니다.
+                    </p>
             </div>
+            <div class="content0 ap2">
+                <p>DETAILS</p>
+            </div>
+            <div class="content2">
+                <p>· 오프닝 세레모니 행사</p>
+                <p>· Harvard Business School & MIT Sloan 교수진 강연 시리즈</p>
+                <p>· 워크샵</p>
+                <p>· 특별초청강연</p>
+                <p>· 기업 탐방 시리즈</p>
+                <p>· 원우 친목회</p>
+                <p>· 원우 MT</p>
+                <p>· 각종 원우회 모임(골프, 등산, 문화예술, 와인 등)</p>
+                <p>· 해외 연수(보스턴 현지 하버드대학교) 및 수료식, 수료식 만찬</p>
+            </div>
+            
             <div class="bglogo">
                 <img src="../img/logo/wl-big.png">
                 <img src="../img/logo/wr-big.png">
