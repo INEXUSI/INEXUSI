@@ -11,6 +11,7 @@
 .item-container{
     width: 100%;
     margin: 25px 0;
+    padding: 0 10px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -22,26 +23,63 @@
 }
 .nitem-l{
     border-radius: 20px;
-    max-width: 300px;
+    width: calc(100vw*(1 / 5));
+    max-width: 320px;
+    min-width: 220px;
     aspect-ratio: 3/2;
     overflow: hidden;
 }
 .nitem-img{
-    width: 100%;
+    width: 105%;
+    transition: filter .2s ease-in-out;
 }
 .nitem-r{
     padding: 15px 20px 20px 25px;
 }
 .nitem-title{
-    font-size: 1.6em;
+    font-size: 28px;
+    font-family: "Pretendard-Regular";
+    font-weight: 600;
+}
+.nitem-date{
+    color: #6c6c6c;
+}
+
+.nitem:hover .nitem-img{
+    filter: brightness(.7);
+}
+@media (min-width:1700px) {
+    .nitem-title{font-size: 29px;}
+}
+@media (max-width:900px) {
+    .nitem-title{font-size: 25px;}
+}
+@media (max-width:700px) {
+    .nitem-title{font-size: 1.2em;}
+}
+@media (max-width:530px) {
+    .contents{
+        padding: 2rem 5px;
+    }
+    .nitem{
+        flex-direction: column;
+    }
+    .nitem-l    {
+        width: 100%;
+        max-width: none;
+    }
+}
+@media (max-width:500px) {
+    .nitem-title{font-size: 1.2em;}
 }
 
 
 /* 페이지 버튼 */
-.pagination{
+.pagination{    
     width: 100%;
     border-top: 1px #000 solid;
     text-align: center;
+    padding-top: 10px;
 }
 .pagination button{
     padding: 3px;
