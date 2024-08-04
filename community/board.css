@@ -70,10 +70,14 @@
     .nitem-date{font-size: 1rem;}
 }
 @media (max-width:650px) {
+    .content0{padding-left: 10px;}
+    .board{padding: 2em 10px;}
+    .item-container{padding: 0;}
     .nitem{
         flex-direction: column;
     }
-    .nitem-l    {
+    .nitem-r{padding: 10px;}
+    .nitem-l{
         width: 100%;
         max-width: none;
     }
