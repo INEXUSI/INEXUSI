@@ -70,7 +70,7 @@
     .nitem-date{font-size: 1rem;}
 }
 @media (max-width:650px) {
-    .content0{padding-left: 10px;}
+    .content0{padding-left: 15px;}
     .board{padding: 2em 10px;}
     .item-container{padding: 0;}
     .nitem{
