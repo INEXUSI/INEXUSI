@@ -82,10 +82,13 @@ const popupFunctions = {
     },
     
     initPopup: function() {
+        if (!this.checkPopupHidden()) {
+            this.createAndShowPopup();
+        }
         // if (!this.checkPopupHidden() && this.isWednesdayOrThursday()) {
         //     this.createAndShowPopup();
         // }
-            this.createAndShowPopup();
+            // this.createAndShowPopup();
     }
 };
 
