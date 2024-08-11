@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./default.css">
+    <link rel="stylesheet" href="./popup.css">
 </head>
 <body>
-<div id="popupOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 999;">
-    <div id="layerPopup" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 1px solid black; z-index: 1000;">
-        <div>
-            <h2>테스트 팝업</h2>
-            <br>
-            <p>- 매주 수요일, 목요일에만 열리는 팝업.</p>
-            <p>- 팝업이 활성화 되어있을 시 스크롤x</p>
-            <p>- 팝업 외부 클릭 시 닫기</p>
-            <p>- 오늘 하루 그만보기 기능 포함</p>
-            <br>
-        </div>    
-        <button id="closePopup">닫기</button>
-        <button id="hidePopupToday">오늘 하루 그만보기</button>
-    </div>
-</div>
 
-    
+    <div class="box">
+        <div class="popupcontent">
+
+
+        </div>
+        <div class="popupclose">
+            <button class="puc-l">
+                오늘 하루 보지 않기
+            </button>
+            <button class="puc-r">
+                닫기
+            </button>
+        </div>
+    </div>
+
 </body>
+<script src="popup.js"></script>
 </html>

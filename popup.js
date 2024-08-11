@@ -22,7 +22,7 @@ const popupFunctions = {
         document.body.style.overflow = 'hidden'; // 스크롤 막기
         
         document.getElementById('closePopup').addEventListener('click', this.hidePopup);
-        document.getElementById('hidePopupToday').addEventListener('click', this.setPopupHidden.bind(this));
+        // document.getElementById('hidePopupToday').addEventListener('click', this.setPopupHidden.bind(this));
         document.getElementById('popupOverlay').addEventListener('click', this.handleOverlayClick.bind(this));
     },
     
