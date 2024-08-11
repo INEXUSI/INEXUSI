@@ -5,12 +5,13 @@
 .popupbox{
     --popupbdc:#0000000f;
     min-height: 300px;
-    /* max-height: 370px; */
-    /* height: 100%; */
     max-width: 370px;
+    width: 100%;
     border: 1px solid var(--popupbdc);
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
 }
 .popupclose,
 .puenter{
@@ -70,3 +71,11 @@
 .pudesc p:last-child{
     font-size: .95rem;
     color: rgb(239, 26, 26);}
+    
+    
+    /*  */
+    @media (max-width:375px) {
+        .popupbox{max-width: calc(100% - 20px)}
+        .popupcontent h2{font-size: 1.35rem;}
+        .pudesc{font-size: .95rem;}
+}
