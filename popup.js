@@ -2,18 +2,33 @@ const popupFunctions = {
     createAndShowPopup: function() {
         const popupHtml = `
             <div id="popupOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 999;">
-                <div id="layerPopup" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 1px solid black; z-index: 1000;">
-                    <div>
-                        <h2>테스트 팝업</h2>
-                        <br>
-                        <p>- 매주 수요일, 목요일에만 열리는 팝업.</p>
-                        <p>- 팝업이 활성화 되어있을 시 스크롤x</p>
-                        <p>- 팝업 외부 클릭 시 닫기</p>
-                        <p>- 오늘 하루 그만보기 기능 포함</p>
-                        <br>
-                    </div>    
-                    <button id="closePopup">닫기</button>
-                    <button id="hidePopupToday">오늘 하루 그만보기</button>
+                <div id="layerPopup" class="popupbox" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);z-index: 1000;">
+                    <div class="popupcontent">
+                        <div class="putitle">
+                            <h2>제2기 INI 최고경영자과정</h2>
+                            <p>9.12 - 11.28(국내일정)</p>
+                        </div>
+                        <div class="pudesc">
+                            <br>
+                            <p>매주 목요일 오후 8시 20분 수업이 시작됩니다.</p>
+                            <p>아래 수업 입장하기를 눌러 수업에 입장해주세요.</p>
+                            <p>입장 코드는 현장에서 안내해드립니다.</p>
+                            <br>
+                            <p>*10월 첫째 주 수업은 공휴일로 인해 10월 2일 수요일로 변경되었습니다.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="puenter">
+                        <a href="http://">수업 입장하기</a>
+                    </button>
+                    <div class="popupclose">
+                        <button id="hidePopupToday" class="puc-l">
+                            오늘 하루 보지 않기
+                        </button>
+                        <button id="closePopup" class="puc-r">
+                            닫기
+                        </button>
+                    </div>
                 </div>
             </div>
         `;
@@ -22,7 +37,7 @@ const popupFunctions = {
         document.body.style.overflow = 'hidden'; // 스크롤 막기
         
         document.getElementById('closePopup').addEventListener('click', this.hidePopup);
-        // document.getElementById('hidePopupToday').addEventListener('click', this.setPopupHidden.bind(this));
+        document.getElementById('hidePopupToday').addEventListener('click', this.setPopupHidden.bind(this));
         document.getElementById('popupOverlay').addEventListener('click', this.handleOverlayClick.bind(this));
     },
     
@@ -67,9 +82,10 @@ const popupFunctions = {
     },
     
     initPopup: function() {
-        if (!this.checkPopupHidden() && this.isWednesdayOrThursday()) {
+        // if (!this.checkPopupHidden() && this.isWednesdayOrThursday()) {
+        //     this.createAndShowPopup();
+        // }
             this.createAndShowPopup();
-        }
     }
 };
 
