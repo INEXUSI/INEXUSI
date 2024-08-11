@@ -19,7 +19,7 @@ const popupFunctions = {
                     </div>
                     
                     <button class="puenter">
-                        <a href="http://">수업 입장하기</a>
+                        <a href="./enter.html" target="_blank">수업 입장하기</a>
                     </button>
                     <div class="popupclose">
                         <button id="hidePopupToday" class="puc-l">

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/logo/wl-yb(favicon).png">
+    <link rel="apple-touch-icon" href="../img/logo/wl-yb(favicon).png"/>
+    <title>인사이트넥서스연구원</title>
+
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../default.css">
+    <style>
+        .zoom-enter-container {
+            max-width: 300px;
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        #zoomEnterInput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        #enterButton {
+            width: 100%;
+            padding: 10px;
+            background-color: #2D8CFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #errorMessage {
+            color: rgb(218, 25, 25);
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="zoom-enter-container">
+        <form id="zoomEnterForm">
+            <input type="text"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" 
+                id="zoomEnterInput" 
+                placeholder="입장코드를 입력하세요" 
+                required>
+            <button type="submit" id="enterButton">입장</button>
+        </form>
+        <p id="errorMessage">입장코드가 틀렸습니다.</p>
+    </div>
+
+    <script src="apikey.js"></script>
+    <script>
+        const ZOOM_ENTER_KEY = config.zoomkey;
+        const zoomEnterForm = document.getElementById('zoomEnterForm');
+        const zoomEnterInput = document.getElementById('zoomEnterInput');
+        const errorMessage = document.getElementById('errorMessage');
+        
+        function checkEnterKey(event) {
+            event.preventDefault(); // 폼의 기본 제출 동작 방지
+            
+            // 입력값 전처리
+            const inputValue = zoomEnterInput.value.trim();
+            
+            // 디버깅을 위한 콘솔 로그
+            console.log('입력값:', inputValue);
+            console.log('ZOOM_ENTER_KEY:', ZOOM_ENTER_KEY);
+            console.log('ZOOM_ENTER_KEY 타입:', typeof ZOOM_ENTER_KEY);
+        
+            // 문자열로 변환하여 비교
+            if (inputValue === String(ZOOM_ENTER_KEY)) {
+                console.log('비밀번호 일치');
+                // 올바른 키가 입력되었을 때 이동할 URL
+                window.location.href = 'https://us06web.zoom.us/j/82961567164?pwd=f0cN7Vi1Yc4kY7t7f8fC5Mxfv3SLgt.1';
+            } else {
+                console.log('비밀번호 불일치');
+                errorMessage.style.display = 'block';
+                zoomEnterInput.value = '';
+            }
+        }
+        
+        zoomEnterForm.addEventListener('submit', checkEnterKey);
+        
+        zoomEnterInput.addEventListener('input', function() {
+            errorMessage.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
