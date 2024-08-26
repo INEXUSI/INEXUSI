@@ -31,8 +31,11 @@
     background: #fff;
     justify-content: center;
     align-items: center;
-    padding: 15px;
     border-top: 1px solid var(--popupbdc);
+}
+.puenter a{
+    padding: 15px;
+    width: 100%;
 }
 .popupclose button:hover,
 .puenter:hover{
